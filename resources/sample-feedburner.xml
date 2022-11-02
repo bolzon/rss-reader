@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+    <channel>
+        <copyright>Copyright 1998 - 2022 DPG Online Services B.V.</copyright>
+        <pubDate>Fri, 28 Oct 2022 10:17:02 GMT</pubDate>
+        <lastBuildDate>Fri, 28 Oct 2022 10:17:02 GMT</lastBuildDate>
+        <docs>https://tweakers.net/reviews/76</docs>
+        <description>Tweakers is de grootste hardwaresite en techcommunity van Nederland.</description>
+        <image>
+            <link>https://tweakers.net/</link>
+            <title>Tweakers</title>
+            <url>https://tweakers.net/g/if/logo.gif</url>
+            <height />
+            <width />
+            <description>Tweakers</description>
+        </image>
+        <language>nl-nl</language>
+        <link>https://tweakers.net/</link>
+        <title>Tweakers Mixed RSS Feed</title>
+        <webMaster>gathering@tweakers.net</webMaster>
+        <xhtml:meta content="noindex" name="robots" xmlns:xhtml="http://www.w3.org/1999/xhtml" />
+        <item>
+            <title>Apple haalt helft van kwartaalomzet van 90 miljard dollar uit iPhones</title>
+            <link>https://tweakers.net/nieuws/202796/apple-haalt-helft-van-kwartaalomzet-van-90-miljard-dollar-uit-iphones.html</link>
+            <description>Apple heeft 90 miljard dollar aan omzet behaald in het afgelopen kwartaal en dat is 8 procent meer dan in hetzelfde kwartaal een jaar eerder. Vooral de iPhones zijn wederom goed voor een sterke omzet; de helft van de kwartaalomzet is afkomstig van deze productcategorie.</description>
+            <author>Mark Hendrikman</author>
+            <category>Nieuws / IT Pro / Bedrijfsnieuws</category>
+            <comments>https://tweakers.net/nieuws/202796/apple-haalt-helft-van-kwartaalomzet-van-90-miljard-dollar-uit-iphones.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202796</guid>
+            <pubDate>Fri, 28 Oct 2022 09:44:41 GMT</pubDate>
+        </item>
+        <item>
+            <title>Google Earth 7.3.6</title>
+            <link>https://tweakers.net/downloads/62246/google-earth-736.html</link>
+            <description>Google heeft een update voor versie 7.3.6 van Google Earth uitgebracht. Dit programma stelt je onder meer in staat om vanuit de ruimte in te zoomen op een groot aantal bezienswaardigheden en deze in detail te bekijken, waaronder steden, maar ook objecten onder de zeespiegel en zelfs op Mars. Ook is het mogelijk om een route te plotten en deze te printen. Vanaf versie 7.0 is het mogelijk om steden in 3d te bekijken en is er een tourguide. De changelog voor deze release ziet er als volgt uit: Announcing Google Earth Pro 7.3.6</description>
+            <author>Bart van Klaveren</author>
+            <category>Software-update / Software</category>
+            <comments>https://tweakers.net/downloads/62246/google-earth-736.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/downloads/62246</guid>
+            <pubDate>Fri, 28 Oct 2022 09:05:47 GMT</pubDate>
+        </item>
+        <item>
+            <title>EU beslist dat nieuwe auto's van 2035 emissievrij moeten zijn</title>
+            <link>https://tweakers.net/nieuws/202798/eu-beslist-dat-nieuwe-autos-van-2035-emissievrij-moeten-zijn.html</link>
+            <description>De Europese Unie heeft gestemd voor een voorstel waarbij nieuwe auto's vanaf 2035 geen uitstoot van CO₂ meer mogen hebben. Eerder waren de Commissie en het Parlement al voor en nu heeft ook de Raad ermee ingestemd.</description>
+            <author>Joris Jansen</author>
+            <category>Nieuws / IT Pro / Politiek en recht</category>
+            <comments>https://tweakers.net/nieuws/202798/eu-beslist-dat-nieuwe-autos-van-2035-emissievrij-moeten-zijn.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202798</guid>
+            <pubDate>Fri, 28 Oct 2022 09:00:51 GMT</pubDate>
+        </item>
+        <item>
+            <title>ImageGlass 8.7</title>
+            <link>https://tweakers.net/downloads/62244/imageglass-87.html</link>
+            <description>Versie 8.7 van ImageGlass is uitgekomen. ImageGlass is een klein, snel en eenvoudig opensource programma waarmee afbeeldingen kunnen worden bekeken. Het kan afbeeldingen zonder kwaliteitsverlies roteren en converteren naar een ander formaat, maar voor andere bewerkingen is het afhankelijk van externe software. In versie 8.0, die Kobe als koosnaam heeft meegekregen is onder meer ondersteuning voor nieuwe formaten toegevoegd, kan ExifTool worden gebruikt voor het weergeven van exif-informatie en kan het de afzonderlijke frames tonen in een gif-afbeelding. In deze uitgave zijn verder nog de volgende verbeteringen aangebracht: Improvements:</description>
+            <author>Bart van Klaveren</author>
+            <category>Software-update / Software</category>
+            <comments>https://tweakers.net/downloads/62244/imageglass-87.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/downloads/62244</guid>
+            <pubDate>Fri, 28 Oct 2022 08:14:09 GMT</pubDate>
+        </item>
+        <item>
+            <title>Wireshark 4.0.1</title>
+            <link>https://tweakers.net/downloads/62230/wireshark-401.html</link>
+            <description>Versie 4.0.1 van de opensource-protocol-analyzer en -packetsniffer Wireshark is uitgekomen, een ontwikkelversie. Met dit programma kunnen verschillende datapakketten en netwerkprotocollen op het netwerk worden geanalyseerd. Ook kan het programma eerder opgeslagen dataverkeer als invoer gebruiken. Wireshark is te downloaden voor 64bit-uitvoeringen van Windows en macOS. De broncode is beschikbaar voor gebruik op Linux, Solaris en *BSD. Sinds versie 4.0 zijn er geen 32bit-uitvoeringen meer beschikbaar. De changelog voor deze uitgave laat de volgende veranderingen en verbeteringen zien: What’s New</description>
+            <author>Bart van Klaveren</author>
+            <category>Software-update / Software</category>
+            <comments>https://tweakers.net/downloads/62230/wireshark-401.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/downloads/62230</guid>
+            <pubDate>Fri, 28 Oct 2022 07:39:12 GMT</pubDate>
+        </item>
+        <item>
+            <title>WizTree 4.11</title>
+            <link>https://tweakers.net/downloads/62216/wiztree-411.html</link>
+            <description>WizTree is een programma dat razendsnel een harde schijf kan analyseren om zo bestanden en mappen te vinden die de meeste ruimte innemen. Het is daarmee een prima hulpmiddel om de harde schijf op te ruimen wanneer er ruimtegebrek is. Het programma kan ook op bepaalde bestandstypes zoeken en het resultaat van een scan exporteren. WizTree mag gratis in privéomgevingen worden gebruikt en kan zijn werk ook doen zonder het eerst te installeren. Hieronder is de changelog voor versie 4.11 te vinden: Changes in WizTree version 4.11:</description>
+            <author>Bart van Klaveren</author>
+            <category>Software-update / Software</category>
+            <comments>https://tweakers.net/downloads/62216/wiztree-411.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/downloads/62216</guid>
+            <pubDate>Fri, 28 Oct 2022 07:29:35 GMT</pubDate>
+        </item>
+        <item>
+            <title>Microsoft Edge 107.0.1418.24</title>
+            <link>https://tweakers.net/downloads/62242/microsoft-edge-1070141824.html</link>
+            <description>Microsoft heeft versie 107 van Edge uitgebracht. Deze op Chromium gebaseerde browser is beschikbaar voor Windows 7 en hoger, Linux en macOS. Ook zijn er versies voor Android en iOS. In deze uitgave, die verspreid over verscheidene dagen wordt uitgerold, heeft Microsoft onder meer verbeteringen aangebracht in de Microsoft Edge sidebar. De volledige changelog voor deze uitgave kan hieronder worden gevonden. Feature updates</description>
+            <author>Bart van Klaveren</author>
+            <category>Software-update / Software</category>
+            <comments>https://tweakers.net/downloads/62242/microsoft-edge-1070141824.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/downloads/62242</guid>
+            <pubDate>Fri, 28 Oct 2022 07:16:41 GMT</pubDate>
+        </item>
+        <item>
+            <title>MAME 0.249</title>
+            <link>https://tweakers.net/downloads/62240/mame-0249.html</link>
+            <description>Versie 0.249 van MAME is uitgekomen. MAME staat voor Multiple Arcade Machine Emulator en is een programma waarmee het mogelijk is om een grote hoeveelheid klassieke arcadespellen te spelen. MESS staat voor Multi Emulator Super System en emuleert een groot aantal oude computers, zoals de Commodore 64, Atari 2600, Gameboy en ZX Spectrum. De uitgebreide lijst met veranderingen staat hier; de releasenotes kunnen hieronder worden gevonden. MAME 0.249:</description>
+            <author>Bart van Klaveren</author>
+            <category>Software-update / Software</category>
+            <comments>https://tweakers.net/downloads/62240/mame-0249.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/downloads/62240</guid>
+            <pubDate>Fri, 28 Oct 2022 07:04:39 GMT</pubDate>
+        </item>
+        <item>
+            <title>Tor Browser 11.5.6</title>
+            <link>https://tweakers.net/downloads/62238/tor-browser-1156.html</link>
+            <description>Versie 11.5.6 van Tor Browser is uitgekomen. Tor staat voor The Onion Router en is een netwerk dat gebruikt kan worden om redelijk anoniem over internet te surfen. Al het tcp-verkeer van gebruikers wordt langs verschillende Tor-routers geleid, waarna het voor de ontvanger vrijwel niet meer mogelijk is om te achterhalen wie de oorspronkelijke verzender was. Binnen het Tor-netwerk is die informatie nog wel aanwezig, zodat antwoorden, uiteraard ook weer via het stelsel van routers, uiteindelijk weer op de juiste plek aankomen. Versie 11 is gebaseerd op Firefox ESR 91, waar dat bij versie 10 nog ESR 78 was. De releasenotes voor deze uitgave zien er als volgt uit: Tor Browser 11.5.6 (Android, Windows, macOS, Linux)</description>
+            <author>Bart van Klaveren</author>
+            <category>Software-update / Software</category>
+            <comments>https://tweakers.net/downloads/62238/tor-browser-1156.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/downloads/62238</guid>
+            <pubDate>Fri, 28 Oct 2022 07:02:06 GMT</pubDate>
+        </item>
+        <item>
+            <title>Denuvo-verwijdering Gotham Knights lijkt weer teruggedraaid te zijn</title>
+            <link>https://tweakers.net/nieuws/202794/denuvo-verwijdering-gotham-knights-lijkt-weer-teruggedraaid-te-zijn.html</link>
+            <description>Third-person-actiegame Gotham Knights lijkt zijn Denuvo-kopieerbeveiliging weer teruggekregen te hebben. Op donderdag bleek die eruit gepatcht te zijn, wat het .exe-bestand 327,1MiB kleiner maakte. In de loop van die dag werd hij door een update weer 315,6MiB groter.</description>
+            <author>Mark Hendrikman</author>
+            <category>Nieuws / Gaming / Games</category>
+            <comments>https://tweakers.net/nieuws/202794/denuvo-verwijdering-gotham-knights-lijkt-weer-teruggedraaid-te-zijn.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202794</guid>
+            <pubDate>Fri, 28 Oct 2022 06:55:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>Kom jij ook naar de Meet-up Privacy &amp; Security op 19 november in Hilversum?</title>
+            <link>https://tweakers.net/plan/3734/kom-jij-ook-naar-de-meet-up-privacy-en-security-op-19-november-in-hilversum.html</link>
+            <description>Nog een paar weken te gaan, dan is het tijd voor de laatste meet-up van dit jaar. Op zaterdag 19 november dompelen we jullie in Theater Gooiland in Hilversum van 09.30 tot 18.00 uur onder in het thema Privacy &amp; Security. Uiteraard sluiten we de meet-up af met een borrel, zodat je met je mede-tweakers alles kunt bespreken dat de diverse sprekers onder de aandacht hebben gebracht.</description>
+            <author>Wout Funnekotter</author>
+            <category>.plan</category>
+            <comments>https://tweakers.net/plan/3734/kom-jij-ook-naar-de-meet-up-privacy-en-security-op-19-november-in-hilversum.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/plan/3734</guid>
+            <pubDate>Fri, 28 Oct 2022 06:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>Elon Musk is de nieuwe eigenaar van Twitter</title>
+            <link>https://tweakers.net/nieuws/202790/elon-musk-is-de-nieuwe-eigenaar-van-twitter.html</link>
+            <description>Elon Musk heeft de overname van Twitter afgerond. De techmiljardair en eigenaar van onder andere Tesla en SpaceX betaalt voor het bedrijf omgerekend zo'n 44 miljard euro. Hij zegt van plan  te zijn het bedrijf van de beurs te halen en wil vrijheid van meningsuiting beschermen.</description>
+            <author>Mark Hendrikman</author>
+            <category>Nieuws / IT Pro / Bedrijfsnieuws</category>
+            <comments>https://tweakers.net/nieuws/202790/elon-musk-is-de-nieuwe-eigenaar-van-twitter.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202790</guid>
+            <pubDate>Fri, 28 Oct 2022 05:51:53 GMT</pubDate>
+        </item>
+        <item>
+            <title>[Plus] Valve over de Steam Deck - 'We willen pc-gaming losmaken van de desktop'</title>
+            <link>https://tweakers.net/reviews/10584/valve-over-de-steam-deck-we-willen-pc-gaming-losmaken-van-de-desktop.html</link>
+            <description>We spraken met Lawrence Yang en Pierre-Loup Griffais van Valve over de Steam Deck, Linux-gaming met SteamOS en andere zaken rondom Steam.</description>
+            <author>Daan van Monsjou</author>
+            <category>Interview / Gaming / Consoles</category>
+            <comments>https://tweakers.net/reviews/10584/1/valve-over-de-steam-deck-we-willen-pc-gaming-losmaken-van-de-desktop-interview-met-lawrence-yang-en-pierre-loup-griffais.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/reviews/10584</guid>
+            <pubDate>Fri, 28 Oct 2022 04:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>Dark Souls-achtige game Wo Long: Fallen Dynasty verschijnt op 3 maart 2023</title>
+            <link>https://tweakers.net/nieuws/202788/dark-souls-achtige-game-wo-long-fallen-dynasty-verschijnt-op-3-maart-2023.html</link>
+            <description>Wo Long: Fallen Dynasty, de nieuwste game van Nioh-ontwikkelaar Team Ninja, verschijnt op 3 maart 2023 voor PlayStation-consoles, Xbox-consoles en pc. Daarnaast is het spel bij release gelijk beschikbaar op Game Pass.</description>
+            <author>Loïs Franx</author>
+            <category>Nieuws / Gaming / Games</category>
+            <comments>https://tweakers.net/nieuws/202788/dark-souls-achtige-game-wo-long-fallen-dynasty-verschijnt-op-3-maart-2023.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202788</guid>
+            <pubDate>Thu, 27 Oct 2022 18:50:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>Microsoft haalt OneNote-app voor Windows 10 uit zijn winkel</title>
+            <link>https://tweakers.net/nieuws/202786/microsoft-haalt-onenote-app-voor-windows-10-uit-zijn-winkel.html</link>
+            <description>Microsoft heeft woensdag OneNote for Windows 10, de in Windows 10 geïntegreerde OneNote-app, uit de Microsoft Store gehaald. Nu is alleen nog een enkele OneNote-app beschikbaar, die een fusie is van OneNote for Windows 10 en de Microsoft 365-versie van de app.</description>
+            <author>Loïs Franx</author>
+            <category>Nieuws / Computers / Desktop applications</category>
+            <comments>https://tweakers.net/nieuws/202786/microsoft-haalt-onenote-app-voor-windows-10-uit-zijn-winkel.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202786</guid>
+            <pubDate>Thu, 27 Oct 2022 17:37:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>GeForce Game Ready Driver 526.47 WHQL</title>
+            <link>https://tweakers.net/downloads/62234/geforce-game-ready-driver-52647-whql.html</link>
+            <description>Nvidia heeft nieuwe stabiele GeForce-drivers uitgebracht. De drivers dragen versienummer 526.47 WHQL, zijn geschikt voor Windows 10 en hoger, en kunnen worden gebruikt op kaarten gebaseerd op de Maxwell-architectuur of nieuwer. In deze uitgave treffen we onder meer verbeteringen voor de spellen Sackboy: A Big Adventure, Victoria 3, WRC Generations en F1 22. De changelog laat verder diverse bugfixes zien en een aantal problemen die wel al bekend zijn maar waar nog geen oplossing voor is. Game Ready</description>
+            <author>Bart van Klaveren</author>
+            <category>Driver-update / Driver</category>
+            <comments>https://tweakers.net/downloads/62234/geforce-game-ready-driver-52647-whql.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/downloads/62234</guid>
+            <pubDate>Thu, 27 Oct 2022 17:21:45 GMT</pubDate>
+        </item>
+        <item>
+            <title>SEGA-ontwikkelaar Rieko Kodama overleden op 59-jarige leeftijd</title>
+            <link>https://tweakers.net/nieuws/202784/sega-ontwikkelaar-rieko-kodama-overleden-op-59-jarige-leeftijd.html</link>
+            <description>SEGA-ontwikkelaar Rieko Kodama is op 59-jarige leeftijd overleden. De Japanse heeft meegewerkt aan verschillende succesvolle games van SEGA, waaronder Sonic the Hedgehog 2, Skies of Arcadia en Alex Kidd.</description>
+            <author>Loïs Franx</author>
+            <category>Nieuws / Gaming / Games</category>
+            <comments>https://tweakers.net/nieuws/202784/sega-ontwikkelaar-rieko-kodama-overleden-op-59-jarige-leeftijd.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202784</guid>
+            <pubDate>Thu, 27 Oct 2022 16:45:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>FileZilla 3.62.0</title>
+            <link>https://tweakers.net/downloads/62236/filezilla-3620.html</link>
+            <description>Versie 3.62.0 van de opensource-ftp-client FileZilla is uitgekomen. Het programma is populair vanwege de geringe belasting van de systeembronnen. FileZilla is beschikbaar voor Windows, Linux en macOS. Sinds versie 3.26.0 worden wachtwoorden ook versleuteld en beveiligd op de computer opgeslagen. Naast de standaardversie is er ook een Pro-versie, die tegen een kleine vergoeding ondersteuning biedt voor diverse online opslagdiensten. Wees voorzichtig met het 'aanbevolen' downloadbestand, want dat wordt gebundeld met software van derden. Op deze pagina zijn installatiebestanden te vinden die geen extra componenten bevatten. Een verkeerde installatie is overigens eenvoudig te herkennen aan het woord sponsored in de bestandsnaam. Sinds de release candidate zijn er geen veranderingen meer doorgevoerd. De changelog hieronder toont alle veranderingen sinds 3.61.0: FileZilla 3.62.0 bugfixes and minor changes:</description>
+            <author>Bart van Klaveren</author>
+            <category>Software-update / Software</category>
+            <comments>https://tweakers.net/downloads/62236/filezilla-3620.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/downloads/62236</guid>
+            <pubDate>Thu, 27 Oct 2022 16:30:40 GMT</pubDate>
+        </item>
+        <item>
+            <title>Sandboxie Plus 5.60.1 / 1.5.1</title>
+            <link>https://tweakers.net/downloads/62218/sandboxie-plus-5601-151.html</link>
+            <description>Sandboxie is een programma waarmee het mogelijk is om onder Windows programma's in een afgeschermde omgeving te draaien. Op die manier zijn wijzigingen die door programma's of webbrowsers worden uitgevoerd, eenvoudig ongedaan te maken, en is er bovendien geen risico dat belangrijke onderdelen van het besturingssysteem worden aangetast. Sandboxie kan worden gebruikt op Windows 7 of hoger en als opensource aangeboden. Het is verkrijgbaar in een classic- en plus-uitvoering. Intern werken ze gelijk, maar die laatste heeft een modernere met Qt gebouwde gebruikersinterface. Sinds versie 1.3.5 zijn de volgende veranderingen en verbeteringen doorgevoerd:</description>
+            <author>Bart van Klaveren</author>
+            <category>Software-update / Software</category>
+            <comments>https://tweakers.net/downloads/62218/sandboxie-plus-5601-151.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/downloads/62218</guid>
+            <pubDate>Thu, 27 Oct 2022 16:10:34 GMT</pubDate>
+        </item>
+        <item>
+            <title>Mozilla Thunderbird 102.4.1</title>
+            <link>https://tweakers.net/downloads/62228/mozilla-thunderbird-10241.html</link>
+            <description>De Mozilla Foundation heeft versie 102.4.1 van Thunderbird uitgebracht. Thunderbird is een opensourceclient voor e-mail en nieuwsgroepen, met features als ondersteuning voor verschillende mail- en newsaccounts, een spamfilter, spellingscontrole en een aanpasbaar uiterlijk. In versie 102 heeft Mozilla onder meer de gebruikersinterface en het adresboek een opfrisbeurt gegeven, is het importeren en exporteren van gebruikersaccounts eenvoudiger gemaakt en is het chat-protocol Matrix toegevoegd. In deze update zijn verder nog de volgende verbeteringen aangebracht: What’s New</description>
+            <author>Bart van Klaveren</author>
+            <category>Software-update / Software</category>
+            <comments>https://tweakers.net/downloads/62228/mozilla-thunderbird-10241.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/downloads/62228</guid>
+            <pubDate>Thu, 27 Oct 2022 15:59:45 GMT</pubDate>
+        </item>
+        <item>
+            <title>BioWare is klaar met ontwikkeling alfaversie Dragon Age: Dreadwolf</title>
+            <link>https://tweakers.net/nieuws/202780/bioware-is-klaar-met-ontwikkeling-alfaversie-dragon-age-dreadwolf.html</link>
+            <description>Ontwikkelaar BioWare meldt dat de alfaversie van zijn nieuwe rpg Dragon Age: Dreadwolf klaar is. Dit betekent dat de game ‘helemaal tot het einde kan worden gespeeld’. Wanneer Dragon Age Dreadwolf helemaal af is, is nog niet bekend.</description>
+            <author>Loïs Franx</author>
+            <category>Nieuws / Gaming / Games</category>
+            <comments>https://tweakers.net/nieuws/202780/bioware-is-klaar-met-ontwikkeling-alfaversie-dragon-age-dreadwolf.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202780</guid>
+            <pubDate>Thu, 27 Oct 2022 15:35:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>Bètaversie tvOS 16.2 bevat stemherkenning voor meerdere gebruikers</title>
+            <link>https://tweakers.net/nieuws/202778/betaversie-tvos-162-bevat-stemherkenning-voor-meerdere-gebruikers.html</link>
+            <description>De bètaversie van tvOS 16.2 lijkt een functie te bevatten waardoor stemherkenning mogelijk wordt voor meerdere gebruikers. Via de stemherkenning kan tvOS overschakelen naar het profiel van de desbetreffende gebruiker wiens stem het heeft herkend en ook aanbevelingen doen.</description>
+            <author>Jay Stout</author>
+            <category>Nieuws / Beeld en geluid / Mediaspelers</category>
+            <comments>https://tweakers.net/nieuws/202778/betaversie-tvos-162-bevat-stemherkenning-voor-meerdere-gebruikers.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202778</guid>
+            <pubDate>Thu, 27 Oct 2022 15:08:26 GMT</pubDate>
+        </item>
+        <item>
+            <title>TeamViewer 15.35.5</title>
+            <link>https://tweakers.net/downloads/62196/teamviewer-15355.html</link>
+            <description>Versie 15.35 van TeamViewer is verschenen. Met dit programma kunnen andere computers via een veilige vpn-verbinding op afstand worden beheerd. Die verbinding loopt via de servers van TeamViewer, dus er hoeven geen instellingen op de router aangepast te worden om het allemaal te laten werken. TeamViewer is gratis voor niet-commercieel gebruik en wordt ontwikkeld voor Windows, Linux, macOS, iOS en Android. In deze uitgave is het makkelijker gemaakt om vertrouwde apparaten met een mobiele telefoon toe te voegen, werkt de browserversie een stuk sneller en kunnen er nu ook bestanden tussen Windows en Mac worden uitgewisseld via de browserversie. New features</description>
+            <author>Bart van Klaveren</author>
+            <category>Software-update / Software</category>
+            <comments>https://tweakers.net/downloads/62196/teamviewer-15355.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/downloads/62196</guid>
+            <pubDate>Thu, 27 Oct 2022 14:38:18 GMT</pubDate>
+        </item>
+        <item>
+            <title>Honeyview 5.50</title>
+            <link>https://tweakers.net/downloads/62224/honeyview-550.html</link>
+            <description>Bandisoft heeft versie 5.50 van Honeyview uitgebracht, een gratis programma waarmee afbeeldingen kunnen worden bekeken. Het is klein, snel en bevat geen ad- of spyware. Ondersteuning is aanwezig voor de gebruikelijkste afbeeldingsformaten. Verder kan het exif-informatie tonen, indien aanwezig, en kan het de afbeeldingen ook als een diavoorstelling weergeven. Daarnaast kunnen kleine bewerkingen worden uitgevoerd, zoals roteren, uitsnijden en vergroten of verkleinen. In deze uitgave zijn de volgende verbeteringen aangebracht: Changes in version 5.50:</description>
+            <author>Bart van Klaveren</author>
+            <category>Software-update / Software</category>
+            <comments>https://tweakers.net/downloads/62224/honeyview-550.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/downloads/62224</guid>
+            <pubDate>Thu, 27 Oct 2022 14:32:30 GMT</pubDate>
+        </item>
+        <item>
+            <title>WinMerge 2.16.24</title>
+            <link>https://tweakers.net/downloads/62226/winmerge-21624.html</link>
+            <description>Er is een nieuwe stabiele versie van WinMerge verschenen. Met WinMerge kunnen bestanden of folders met elkaar worden vergeleken: handig, bijvoorbeeld om te zien wat er is veranderd tussen verschillende stukken broncode of om de inhoud van logbestanden door te pluizen. Het programma bevat syntax highlighting en de applicatie kan op basis van de ontdekte verschillen patch-bestanden aanmaken. Sinds versie 2.16.22 zijn de volgende veranderingen en verbeteringen aangebracht:</description>
+            <author>Bart van Klaveren</author>
+            <category>Software-update / Software</category>
+            <comments>https://tweakers.net/downloads/62226/winmerge-21624.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/downloads/62226</guid>
+            <pubDate>Thu, 27 Oct 2022 14:29:16 GMT</pubDate>
+        </item>
+        <item>
+            <title>Nuki presenteert prototype slim deurslot met ondersteuning voor Matter</title>
+            <link>https://tweakers.net/nieuws/202776/nuki-presenteert-prototype-slim-deurslot-met-ondersteuning-voor-matter.html</link>
+            <description>De Oostenrijkse fabrikant Nuki heeft een prototype van een slim deurslot gepresenteerd met ondersteuning voor Matter. Het bedrijf wil ondersteuning voor de smarthomestandaard verder integreren in zijn ecosysteem en stelt dat het migratieproces enkele jaren kan duren.</description>
+            <author>Jay Stout</author>
+            <category>Nieuws / Beeld en geluid / Smarthome</category>
+            <comments>https://tweakers.net/nieuws/202776/nuki-presenteert-prototype-slim-deurslot-met-ondersteuning-voor-matter.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202776</guid>
+            <pubDate>Thu, 27 Oct 2022 14:24:57 GMT</pubDate>
+        </item>
+        <item>
+            <title>Nederlandse politie vindt spoor in zaak dankzij hackathon met IT-specialisten</title>
+            <link>https://tweakers.net/nieuws/202770/nederlandse-politie-vindt-spoor-in-zaak-dankzij-hackathon-met-it-specialisten.html</link>
+            <description>De politie van Den Haag heeft een spoor naar actieve cryptowallets gevonden dankzij een hackathon die begin oktober werd gehouden in samenwerking met digitale specialisten uit het bedrijfsleven. Ook de identiteit van een cybercrimineel kon worden achterhaald.</description>
+            <author>Jay Stout</author>
+            <category>Nieuws / IT Pro / Websites en communities</category>
+            <comments>https://tweakers.net/nieuws/202770/nederlandse-politie-vindt-spoor-in-zaak-dankzij-hackathon-met-it-specialisten.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202770</guid>
+            <pubDate>Thu, 27 Oct 2022 13:31:42 GMT</pubDate>
+        </item>
+        <item>
+            <title>Samsung voegt astrofotografie-modus toe aan Camera Raw-app voor S22</title>
+            <link>https://tweakers.net/nieuws/202774/samsung-voegt-astrofotografie-modus-toe-aan-camera-raw-app-voor-s22.html</link>
+            <description>Samsung voegt een astrofotografie-modus toe aan zijn Camera Raw-app voor de Galaxy S22-telefoons. Met de optie kunnen gebruikers planeten, sterren en sterrenbeelden op de foto zetten met een sluitertijd tot vier minuten.</description>
+            <author>Arnoud Wokke</author>
+            <category>Nieuws / Tablets en telefoons / Smartphones</category>
+            <comments>https://tweakers.net/nieuws/202774/samsung-voegt-astrofotografie-modus-toe-aan-camera-raw-app-voor-s22.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202774</guid>
+            <pubDate>Thu, 27 Oct 2022 12:55:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>EA lijkt te stoppen met verkoop van fysieke games in Duitsland - update</title>
+            <link>https://tweakers.net/nieuws/202768/ea-lijkt-te-stoppen-met-verkoop-van-fysieke-games-in-duitsland.html</link>
+            <description>Game-uitgever EA zou stoppen met de verkoop van fysieke games in Duitsland, Zwitserland en Oostenrijk. Dat heeft een Duitse site uitgeplozen. Het is onbekend of andere bedrijven wel fysieke versies van EA-games op de markt zullen brengen.</description>
+            <author>Arnoud Wokke</author>
+            <category>Nieuws / Gaming / Games</category>
+            <comments>https://tweakers.net/nieuws/202768/ea-lijkt-te-stoppen-met-verkoop-van-fysieke-games-in-duitsland.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202768</guid>
+            <pubDate>Thu, 27 Oct 2022 12:40:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>Gerucht: TikTok gaat vanaf volgende week spelletjes aanbieden</title>
+            <link>https://tweakers.net/nieuws/202772/gerucht-tiktok-gaat-vanaf-volgende-week-spelletjes-aanbieden.html</link>
+            <description>TikTok zou vanaf volgende week spelletjes aanbieden, naast video's. Dat meldt The Financial Times. Het sociale medium zou dat gaan promoten met een tabblad in de app, om zo gelijk veel gebruikers te bereiken.</description>
+            <author>Arnoud Wokke</author>
+            <category>Nieuws / IT Pro / Websites en communities</category>
+            <comments>https://tweakers.net/nieuws/202772/gerucht-tiktok-gaat-vanaf-volgende-week-spelletjes-aanbieden.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202772</guid>
+            <pubDate>Thu, 27 Oct 2022 12:39:45 GMT</pubDate>
+        </item>
+        <item>
+            <title>Gerucht: Warner Bros. heeft Denuvo-drm in Gotham Knights verwijderd</title>
+            <link>https://tweakers.net/nieuws/202766/gerucht-warner-bros-heeft-denuvo-drm-in-gotham-knights-verwijderd.html</link>
+            <description>Het lijkt er op dat Warner Bros. de Denuvo drm-software uit Gotham Knights heeft verwijderd. Het bedrijf heeft dit nog niet bevestigd, maar verschillende gamewebsites claimen dit wel. Naar verluidt doet Warner dit om de game soepeler te laten draaien na klachten over de prestaties.</description>
+            <author>Jay Stout</author>
+            <category>Nieuws / Gaming / Games</category>
+            <comments>https://tweakers.net/nieuws/202766/gerucht-warner-bros-heeft-denuvo-drm-in-gotham-knights-verwijderd.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202766</guid>
+            <pubDate>Thu, 27 Oct 2022 12:22:53 GMT</pubDate>
+        </item>
+        <item>
+            <title>Ford en Volkswagen stoppen met start-up die autonome rijtechnologie ontwikkelt</title>
+            <link>https://tweakers.net/nieuws/202760/ford-en-volkswagen-stoppen-met-start-up-die-autonome-rijtechnologie-ontwikkelt.html</link>
+            <description>Ford en Volkswagen hebben besloten om te stoppen met investeren in Argo AI, een start-up die kunstmatige intelligentie voor autonoom rijdende wagens ontwikkelt. De autobedrijven willen aankloppen bij externe bedrijven in plaats van de zelfrijdende technologie zelf te ontwikkelen.</description>
+            <author>Jay Stout</author>
+            <category>Nieuws / IT Pro / Bedrijfsnieuws</category>
+            <comments>https://tweakers.net/nieuws/202760/ford-en-volkswagen-stoppen-met-start-up-die-autonome-rijtechnologie-ontwikkelt.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202760</guid>
+            <pubDate>Thu, 27 Oct 2022 11:32:24 GMT</pubDate>
+        </item>
+        <item>
+            <title>GoldWave 6.68</title>
+            <link>https://tweakers.net/downloads/62222/goldwave-668.html</link>
+            <description>Versie 6.68 van GoldWave is uitgekomen. Dit programma is een uitgebreide digitale audio-editor voor Windows, Android en iOS, dat sinds 1993 bestaat. Het kan op een hoge kwaliteit, tot maximaal 24bits en 192kHz, geluidsbestanden bewerken en ondersteunt onder andere de wav-, mp3-, ogg-, vox- en flac-formaten. De vele andere features zijn op deze pagina te bekijken. Een licentie kost 19 dollar voor een jaar of 59 voor het leven en werkt dan op alle ondersteunde platformen. In deze uitgave zijn de vertalingen bijgewerkt en enkele belangrijke maar niet nader omschreven problemen verholpen. Changes in GoldWave version 6.68:</description>
+            <author>Bart van Klaveren</author>
+            <category>Software-update / Software</category>
+            <comments>https://tweakers.net/downloads/62222/goldwave-668.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/downloads/62222</guid>
+            <pubDate>Thu, 27 Oct 2022 10:55:15 GMT</pubDate>
+        </item>
+        <item>
+            <title>Gerucht: Apple werkt aan 16"-versie van iPad</title>
+            <link>https://tweakers.net/nieuws/202762/gerucht-apple-werkt-aan-16-inch-versie-van-ipad.html</link>
+            <description>Apple zou werken aan een variant van de iPad met een 16"-scherm, zo claimt The Information. Er zijn verder geen details bekend over het apparaat. Er gaan al langer geruchten over iPads met grotere schermen.</description>
+            <author>Arnoud Wokke</author>
+            <category>Nieuws / Tablets en telefoons / Tablets</category>
+            <comments>https://tweakers.net/nieuws/202762/gerucht-apple-werkt-aan-16-inch-versie-van-ipad.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202762</guid>
+            <pubDate>Thu, 27 Oct 2022 10:46:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>'Microsoft annuleerde vorig jaar Hololens-variant voor consumenten'</title>
+            <link>https://tweakers.net/nieuws/202764/microsoft-annuleerde-vorig-jaar-hololens-variant-voor-consumenten.html</link>
+            <description>Microsoft was bezig met een goedkopere variant van zijn Hololens-headset voor bedrijven. Het Amerikaanse bedrijf schrapte het project eind vorig jaar in voorbereiding op de komende economische recessie, zegt zakenkrant The Wall Street Journal.</description>
+            <author>Arnoud Wokke</author>
+            <category>Nieuws / Beeld en geluid / Gadgets</category>
+            <comments>https://tweakers.net/nieuws/202764/microsoft-annuleerde-vorig-jaar-hololens-variant-voor-consumenten.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202764</guid>
+            <pubDate>Thu, 27 Oct 2022 10:24:22 GMT</pubDate>
+        </item>
+        <item>
+            <title>Aantal elektrische rijders in Nederland is in paar jaar tijd verviervoudigd</title>
+            <link>https://tweakers.net/nieuws/202758/aantal-elektrische-rijders-in-nederland-is-in-paar-jaar-tijd-verviervoudigd.html</link>
+            <description>Het aantal mensen in Nederland dat zegt elektrisch te rijden is in een paar jaar tijd verviervoudigd, zegt I&amp;O Research. Reed in 2020 nog 1 procent elektrisch, in het nieuwste onderzoek is dat gestegen naar 4 procent.</description>
+            <author>Arnoud Wokke</author>
+            <category>Nieuws / Beeld en geluid / Cartech</category>
+            <comments>https://tweakers.net/nieuws/202758/aantal-elektrische-rijders-in-nederland-is-in-paar-jaar-tijd-verviervoudigd.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202758</guid>
+            <pubDate>Thu, 27 Oct 2022 09:46:08 GMT</pubDate>
+        </item>
+        <item>
+            <title>Bug in macOS Ventura staat werking beveiligingsprogramma's in de weg</title>
+            <link>https://tweakers.net/nieuws/202756/bug-in-macos-ventura-staat-werking-beveiligingsprogrammas-in-de-weg.html</link>
+            <description>MacOS Ventura bevat een bug die beveiligingsprogramma's toegang verhindert tot de opslagruimte om scans uit te voeren. Ontwikkelaars van deze programma's kregen hierdoor klachten van gebruikers. Apple heeft een fix beloofd die er via een update aankomt.</description>
+            <author>Jay Stout</author>
+            <category>Nieuws / Computers / Besturingssystemen</category>
+            <comments>https://tweakers.net/nieuws/202756/bug-in-macos-ventura-staat-werking-beveiligingsprogrammas-in-de-weg.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202756</guid>
+            <pubDate>Thu, 27 Oct 2022 09:36:40 GMT</pubDate>
+        </item>
+        <item>
+            <title>Mozilla Firefox 106.0.2</title>
+            <link>https://tweakers.net/downloads/62214/mozilla-firefox-10602.html</link>
+            <description>Mozilla heeft een tweede update voor versie 106 van zijn webbrowser Firefox uitgebracht. In versie 106 heeft Mozilla onder meer de mogelijkheid toegevoegd om pdf-documenten te bewerken, heeft een privaat scherm een ander uiterlijk gekregen en kan deze nu ook in Windows 10 of 11 op de taakbalk worden vastgepind en kunnen macOS-gebruikers nu tekst in afbeeldingen herkennen. In versie 106.0.2 zijn verder nog de volgende problemen verholpen: Fixed</description>
+            <author>Bart van Klaveren</author>
+            <category>Software-update / Software</category>
+            <comments>https://tweakers.net/downloads/62214/mozilla-firefox-10602.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/downloads/62214</guid>
+            <pubDate>Thu, 27 Oct 2022 08:59:19 GMT</pubDate>
+        </item>
+        <item>
+            <title>Phil Spencer: introductie Xbox-streamingstick zal nog jaren duren</title>
+            <link>https://tweakers.net/nieuws/202754/phil-spencer-introductie-xbox-streamingstick-zal-nog-jaren-duren.html</link>
+            <description>Xbox-topman Phil Spencer heeft tijdens een technologieconferentie van de Wall Street Journal gezegd dat de Xbox Cloud Gaming-streamingstick nog niet te koop zal zijn in de nabije toekomst. Volgens Spencer komt het apparaat uiteindelijk wel uit, maar zal dat nog enkele jaren duren.</description>
+            <author>Jay Stout</author>
+            <category>Nieuws / Gaming / Consoles</category>
+            <comments>https://tweakers.net/nieuws/202754/phil-spencer-introductie-xbox-streamingstick-zal-nog-jaren-duren.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/nieuws/202754</guid>
+            <pubDate>Thu, 27 Oct 2022 08:50:15 GMT</pubDate>
+        </item>
+        <item>
+            <title>Total Commander 10.52</title>
+            <link>https://tweakers.net/downloads/62220/total-commander-1052.html</link>
+            <description>Versie 10.52 van Total Commander is uitgekomen. Dit bestandsbeheerprogramma kan als vervanging voor Windows Verkenner worden gebruikt. Doordat het beeld in tweeën is gesplitst, is het eenvoudig om bestanden te kopiëren, maar het programma kan veel meer. Zo zijn er diverse manieren om bestanden aan te passen, zijn een ingebouwde ftp-client en een multirename-tool aanwezig, en is er ondersteuning voor een groot aantal compressieformaten. Verder kan de functionaliteit met plug-ins worden uitgebreid. Versie 10.52 is een zogenaamde bugfix-release die voornamelijk kleine problemen verhelpt, maar ook enkele nieuwe mogelijkheden toevoegt: New functions in Total Commander 10.52</description>
+            <author>Bart van Klaveren</author>
+            <category>Software-update / Software</category>
+            <comments>https://tweakers.net/downloads/62220/total-commander-1052.html#reacties</comments>
+            <guid isPermaLink="false">https://tweakers.net/downloads/62220</guid>
+            <pubDate>Thu, 27 Oct 2022 08:41:04 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
