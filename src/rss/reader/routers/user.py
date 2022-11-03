@@ -29,6 +29,7 @@ def create_user(request: Request, user: User):
 def find_user(id: str, request: Request):
     if (user := request.app.col_users.find_one({'_id': id})) is not None:
         logger.debug('User found: %s', json.dumps(user))
+        logger.debug('User in request: %s', json.dumps(request.scope['user']))
         return user
     logger.debug('User not found: %s', id)
     raise HTTPException(
