@@ -1,6 +1,6 @@
 # RSS Reader
 
-API motivated by a SoundCloud assessment.
+API motivated by a Sendcloud assessment.
 
 ## Tech stack
 
