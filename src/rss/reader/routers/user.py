@@ -1,4 +1,3 @@
-import json
 import logging
 
 from fastapi import APIRouter, HTTPException, Request, status
@@ -25,10 +24,10 @@ def find_users(request: Request):
 @router.get('/{id}', response_model=User,
             responses={status.HTTP_404_NOT_FOUND: {'model': NotFound}})
 def find_user(id: str, request: Request):
-    user = User(**request.app.col_users.find_one(
+    user = request.app.col_users.find_one(
         filter={'_id': id},
         projection={'password': False}
-    ))
+    )
     if not user:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,

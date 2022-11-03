@@ -16,12 +16,16 @@ router = APIRouter()
 @router.post('/', responses={status.HTTP_200_OK: {'model': AuthToken},
                              status.HTTP_401_UNAUTHORIZED: {'model': Unauthorized}})
 def login(request: Request, form_data: OAuth2PasswordRequestForm = Depends()):
-    user = UserWithPassword(**request.app.col_users.find_one(
+    user = request.app.col_users.find_one(
         filter={'email': form_data.username}
-    ))
-    if not user or not verify_user_pwd(form_data.password, user.password):
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail='Invalid email or password.'
-        )
+    )
+    not_authorized = HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail='Invalid email or password.'
+    )
+    if not user:
+        raise not_authorized
+    user = UserWithPassword(**user)
+    if not verify_user_pwd(form_data.password, user.password):
+        raise not_authorized
     return create_token({'id': user.id, 'name': user.name})
