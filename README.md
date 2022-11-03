@@ -7,6 +7,17 @@ Application creation was motivated by a SoundCloud assessment.
 - Application written in Python 3.9
 - Code dependencies managed by [pipenv](https://pipenv.pypa.io/en/latest/)
 
+## Database
+
+MongoDB is used as a database for this application.
+
+Configure the database connection in the `.env` file.
+
+```
+MONGO_URL=mongodb://0.0.0.0:21017
+MONGO_DB_NAME=rss_reader
+```
+
 ## Install and run
 
 ### Docker
