@@ -9,4 +9,4 @@ RUN pip install --upgrade pip && \
     pip install -r requirements.txt
 
 ENTRYPOINT ["uvicorn"]
-CMD ["rss.reader.main:app"]
+CMD ["rss.reader.main:app", "--no-server-header"]

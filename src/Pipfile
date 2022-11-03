@@ -8,6 +8,7 @@ uvicorn = {extras = ["standard"], version = "*"}
 fastapi = "*"
 pymongo = {extras = ["srv"], version = "*"}
 email-validator = "*"
+python-multipart = "*"
 
 [dev-packages]
 pycodestyle = "*"

@@ -9,3 +9,7 @@ class RssFeed(BaseModel):
     title: str
     link: str
     description: str
+
+
+class RssFeedList(BaseModel):
+    feeds: list[RssFeed]

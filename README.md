@@ -1,11 +1,14 @@
 # RSS Reader
 
-Application creation was motivated by a SoundCloud assessment.
+API motivated by a SoundCloud assessment.
 
-## Requirements
+## Tech stack
 
-- Application written in Python 3.9
+- Implemented in Python 3.9 with FastAPI
+- OAuth2 authentication
 - Code dependencies managed by [pipenv](https://pipenv.pypa.io/en/latest/)
+- Docker container ready
+- MongoDB as database
 
 ## Database
 
@@ -22,7 +25,7 @@ MONGO_DB_NAME=rss_reader
 
 ### Docker
 
-First, go to `src/` folder and create the updated `requirements.txt` file.
+Go to `src/` folder and create the updated `requirements.txt` file.
 
 ```sh
 $ pipenv lock -r > requirements.txt
@@ -57,14 +60,14 @@ $ pipenv install
 Run the application.
 
 ```sh
-$ pipenv run uvicorn rss.reader.main:app
+$ pipenv run uvicorn rss.reader.main:app --reload
 ```
 
 Server URL
 - https://127.0.0.1:8000/
 
 Docs URL (OpenAPI)
-  - https://127.0.0.1:8000/redoc
+  - https://127.0.0.1:8000/docs
 
 ## Pylint
 

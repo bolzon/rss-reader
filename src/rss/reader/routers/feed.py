@@ -1,11 +1,8 @@
 import logging
 
-from fastapi import APIRouter, Depends, HTTPException, Request, status
-from fastapi.encoders import jsonable_encoder
+from fastapi import APIRouter, Request
 
-from rss.reader.auth.provider import auth_user
-from rss.reader.domain.rss_feed import RssFeed
-from rss.reader.models.not_found import NotFound
+from rss.reader.domain.rss_feed import RssFeedList
 
 
 logger = logging.getLogger(__name__)
@@ -13,10 +10,10 @@ logger = logging.getLogger(__name__)
 router = APIRouter()
 
 
-@router.get('/', response_model=list[RssFeed])
-def list_feeds(request: Request):
-    return {'feeds':[]}
-    # feeds = request.app.col_rss_feeds.find({
-    #     'user_id': 'asd'
-    # })
-    # return feeds
+@router.get('/', response_model=RssFeedList)
+def find_feeds(request: Request):
+    return RssFeedList(feeds=list(
+        request.app.col_rss_feeds.find(
+            limit=20
+        )
+    ))

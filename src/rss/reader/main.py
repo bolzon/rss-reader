@@ -1,3 +1,5 @@
+import logging
+
 from dotenv import dotenv_values
 from logging.config import fileConfig
 
@@ -12,10 +14,14 @@ from rss.reader.routes import config_routes
 from rss.reader.startup import config_startup
 
 
-app = FastAPI(debug=True)
+logger = logging.getLogger(__name__)
+
+app = FastAPI(debug=(logger.level == logging.DEBUG))
 app.config = dotenv_values('.env')
 
 config_startup(app)
 config_middlewares(app)
 config_routes(app)
 config_openapi(app)
+
+logger.info('Server up')

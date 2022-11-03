@@ -7,4 +7,11 @@ class User(BaseModel):
     id: str = Field(default_factory=uuid.uuid4, alias='_id')
     name: str
     email: str
+
+
+class UserWithPassword(User):
     password: str
+
+
+class UserList(BaseModel):
+    users: list[User]

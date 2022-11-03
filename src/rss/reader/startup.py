@@ -1,7 +1,5 @@
 import logging
 
-from typing import Any
-
 from fastapi import FastAPI
 from pymongo import MongoClient
 
@@ -10,6 +8,7 @@ logger = logging.getLogger(__name__)
 
 
 def config_startup(app: FastAPI):
+
     @app.on_event('startup')
     def startup():
         app.dbcli = MongoClient(app.config['MONGO_URL'])
