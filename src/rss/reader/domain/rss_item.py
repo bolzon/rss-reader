@@ -10,3 +10,7 @@ class RssItem(BaseModel):
     link: str
     description: str
     pub_date: str
+
+
+class RssItemList(BaseModel):
+    items: list[RssItem]
