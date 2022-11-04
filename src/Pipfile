@@ -23,4 +23,4 @@ python_version = "3.9"
 [scripts]
 app = "uvicorn rss.reader.main:app --reload"
 lint = "pylint rss/"
-pep8 = "autopep8 -r --diff rss/"
+pep8 = "autopep8 -ri rss/"
