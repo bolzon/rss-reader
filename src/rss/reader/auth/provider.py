@@ -13,7 +13,7 @@ oauth2_bearer = OAuth2PasswordBearer(tokenUrl='/login')
 
 
 def auth_user(request: Request, token: str = Depends(oauth2_bearer)):
-    if not (decoded_token := check_token(token)):
+    if not (decoded_token := check_token(token)) or 'user' not in decoded_token:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail='Invalid token'
