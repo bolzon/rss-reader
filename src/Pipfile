@@ -22,4 +22,4 @@ python_version = "3.9"
 
 [scripts]
 lint = "pylint rss/"
-pep8 = "autopep8 -r rss/"
+pep8 = "autopep8 -r --diff rss/"
