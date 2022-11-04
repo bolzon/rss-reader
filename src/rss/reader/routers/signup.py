@@ -4,7 +4,7 @@ import logging
 from fastapi import APIRouter, Request, status
 from fastapi.encoders import jsonable_encoder
 
-from rss.reader.auth.provider import encrypt_user_pwd
+from rss.reader.auth.pwd import encrypt_user_pwd
 from rss.reader.domain.user import User, UserWithPassword
 
 
