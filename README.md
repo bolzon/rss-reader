@@ -10,15 +10,18 @@ API motivated by a Sendcloud assessment.
 - Docker container ready
 - MongoDB as database
 
-## Database
+## Env vars
 
-MongoDB is used as a database for this application.
+| Var | Description | Example |
+|-----|-------------|---------|
+| JWT_SECRET | Secret to encrypt user passwords. | 26faa9...58d95d |
+| MONGO_URL | MongoDB url. | mongodb://0.0.0.0:21017 |
+| MONGO_DB_NAME | Database name. | rss_reader |
 
-Configure the database connection in the `.env` file.
+JWT_SECRET can be randomly generated with openssl.
 
-```
-MONGO_URL=mongodb://0.0.0.0:21017
-MONGO_DB_NAME=rss_reader
+```sh
+$ openssl rand -hex 32
 ```
 
 ## Install and run
