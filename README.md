@@ -4,9 +4,8 @@ API motivated by a Sendcloud assessment.
 
 ## Tech stack
 
-- Implemented in Python 3.9 with FastAPI
+- Python 3.9 + FastAPI + pipenv
 - OAuth2 authentication
-- Code dependencies managed by [pipenv](https://pipenv.pypa.io/en/latest/)
 - Docker container ready
 - MongoDB as database
 
@@ -15,7 +14,7 @@ API motivated by a Sendcloud assessment.
 | Var | Description | Example |
 |-----|-------------|---------|
 | JWT_SECRET | Secret to encrypt user passwords. | 26faa9...58d95d |
-| MONGO_URL | MongoDB url. | mongodb://0.0.0.0:21017 |
+| MONGO_URL | Database url. | mongodb://127.0.0.1:21017 |
 | MONGO_DB_NAME | Database name. | rss_reader |
 
 JWT_SECRET can be randomly generated with openssl.
@@ -40,7 +39,7 @@ Build the docker image.
 $ docker build -t sendcloud/rss-reader:latest .
 ```
 
-Finally, run the container.
+Run the container.
 
 ```sh
 $ docker run -it --rm --name rss-reader --network host sendcloud/rss-reader:latest
@@ -48,13 +47,9 @@ $ docker run -it --rm --name rss-reader --network host sendcloud/rss-reader:late
 
 To run the application in background, remove `-it` and add `-d` (detached) arg from the command line above.
 
-### Locally (development mode)
+### Run in dev mode
 
-Project dependencies are managed by [pipenv](https://pipenv.pypa.io/en/latest/).
-
-Go to `src/` folder.
-
-Install project dependencies.
+Go to `src/` folder and install project dependencies.
 
 ```sh
 $ pipenv install
@@ -66,16 +61,24 @@ Run the application.
 $ pipenv run uvicorn rss.reader.main:app --reload
 ```
 
-Server URL
+Server URL:
 - https://127.0.0.1:8000/
 
-Docs URL (OpenAPI)
+Docs URL (OpenAPI):
   - https://127.0.0.1:8000/docs
 
 ## Pylint
 
 Static code analysis is made by [pylint](https://pylint.pycqa.org/).
 
+```sh
+$ pipenv run lint
+```
+
 ## PEP 8
 
 PEP 8 style conventions is checked by [pycodestyle](https://github.com/PyCQA/pycodestyle).
+
+```sh
+$ pipenv run pep8
+```

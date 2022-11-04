@@ -15,6 +15,11 @@ python-jose = {extras = ["cryptography"], version = "*"}
 [dev-packages]
 pycodestyle = "*"
 pylint = "*"
+autopep8 = "*"
 
 [requires]
 python_version = "3.9"
+
+[scripts]
+lint = "pylint rss/"
+pep8 = "autopep8 -r rss/"
