@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, FastAPI
 
-from rss.reader.auth.provider import auth_user
+from rss.reader.injections.auth import auth_user
 from rss.reader.routers.feed import router as feed_router
 from rss.reader.routers.login import router as login_router
 from rss.reader.routers.signup import router as signup_router
