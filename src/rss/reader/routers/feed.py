@@ -24,4 +24,4 @@ def find_items(feed_id: str, request: Request):
 @router.get('/', response_model=RssFeedList)
 def find_feeds(request: Request):
     feed_repo: FeedRepository = request.app.repository.feed
-    return RssFeedList(feeds=feed_repo.get_by_user(user_id=request.user.id))
+    return RssFeedList(feeds=feed_repo.get_all_by_user(user_id=request.user.id))
