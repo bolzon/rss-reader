@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 class DbProvider:
     def __init__(self, url: str, dbname: str):
         self.client: MongoClient = MongoClient(url)
-        self.db: Database = self.client.get_database(dbname)
+        self.db: Database = self.get_db(dbname)
         logger.info('Connected to DB: %s (%s)', url, dbname)
 
     def get_db(self, db_name: str) -> Database:
