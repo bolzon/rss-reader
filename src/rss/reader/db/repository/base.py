@@ -17,6 +17,10 @@ class BaseRepository:
         res = self.col.insert_one(document)
         return self.get_by_id(res.inserted_id)
 
+    def create_many(self, documents: list[dict[str, Any]]) -> list[str]:
+        res = self.col.insert_many(documents)
+        return list(res.inserted_ids)
+
     def get(self, filter: dict[str, Any], **kwargs) -> Union[dict[str, Any], None]:
         args = {'filter': filter} | kwargs
         return self.col.find_one(**args)
@@ -31,5 +35,15 @@ class BaseRepository:
 
     def update(self, filter: dict[str, Any],
                document: dict[str, Any]) -> dict[str, Any]:
-        self.col.update_one(filter=filter, update=document, upsert=False)
+        if '_id' in document:
+            del document['_id']
+        self.col.update_one(filter=filter, update={'$set': document})
         return self.get(filter=filter)
+
+    def delete(self, filter: dict[str, Any]) -> int:
+        res = self.col.delete_one(filter=filter)
+        return res.deleted_count
+
+    def delete_all(self, filter: dict[str, Any]) -> int:
+        res = self.col.delete_many(filter=filter)
+        return res.deleted_count

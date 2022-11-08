@@ -8,8 +8,7 @@ class FeedRepository(BaseRepository):
     def __init__(self, db_provider: DbProvider):
         super().__init__(db_provider, 'feeds')
 
-    def create(self, user_id: str, feed: dict[str, Any]) -> dict[str, Any]:
-        feed['user_id'] = user_id
+    def create(self, feed: dict[str, Any]) -> dict[str, Any]:
         return super().create(feed)
 
     def get_by_user(self, user_id: str) -> Union[dict[str, Any], None]:

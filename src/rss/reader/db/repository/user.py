@@ -1,7 +1,5 @@
 from typing import Any, Union
 
-from pymongo.collection import Collection
-
 from rss.reader.db.provider import DbProvider
 from rss.reader.db.repository.base import BaseRepository
 

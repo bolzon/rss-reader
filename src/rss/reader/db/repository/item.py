@@ -8,9 +8,7 @@ class ItemRepository(BaseRepository):
     def __init__(self, db_provider: DbProvider):
         super().__init__(db_provider, 'items')
 
-    def create(self, user_id: str, feed_id: str, item: dict[str, Any]) -> dict[str, Any]:
-        item['user_id'] = user_id
-        item['feed_id'] = feed_id
+    def create(self, item: dict[str, Any]) -> dict[str, Any]:
         return super().create(item)
 
     def get_all_by_user_feed(self, user_id: str, feed_id: str,
