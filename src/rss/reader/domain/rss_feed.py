@@ -1,18 +1,18 @@
 import uuid
 
-from pydantic import BaseModel, Field
+from typing import Optional
 
-from rss.reader.domain.rss_item import RssItem
+from pydantic import BaseModel, Field
 
 
 class RssFeed(BaseModel):
     id: str = Field(default_factory=uuid.uuid4, alias='_id')
     user_id: str
-    name: str
-    title: str
-    link: str
-    description: str
+    url: str
+    title: Optional[str] = None
+    link: Optional[str] = None
+    description: Optional[str] = None
 
 
 class RssFeedList(BaseModel):
-    feeds: list[RssFeed]
+    feeds: list[RssFeed] = []

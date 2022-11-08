@@ -1,5 +1,7 @@
 import uuid
 
+from typing import Optional
+
 from pydantic import BaseModel, Field
 
 
@@ -7,13 +9,12 @@ class RssItem(BaseModel):
     id: str = Field(default_factory=uuid.uuid4, alias='_id')
     user_id: str
     feed_id: str
-    name: str
-    title: str
-    link: str
-    description: str
-    pub_date: str
-    is_read: bool
+    title: Optional[str] = None
+    link: Optional[str] = None
+    description: Optional[str] = None
+    pub_date: Optional[str] = None
+    is_read: bool = False
 
 
 class RssItemList(BaseModel):
-    items: list[RssItem]
+    items: list[RssItem] = []
