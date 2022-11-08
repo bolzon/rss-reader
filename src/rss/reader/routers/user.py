@@ -13,19 +13,19 @@ router = APIRouter()
 
 
 @router.get('/', response_model=UserList)
-def find_users(request: Request):
+def get_users(request: Request):
     user_repo: UserRepository = request.app.repository.user
     return UserList(users=user_repo.get_all())
 
 
 @router.get('/{id}', response_model=User,
             responses={status.HTTP_404_NOT_FOUND: {'model': NotFound}})
-def find_user(id: str, request: Request):
+def get_user(request: Request, id: str):
     user_repo: UserRepository = request.app.repository.user
-    user = user_repo.get(filter={'_id': id})
-    if not user:
+    db_user = user_repo.get(filter={'_id': id})
+    if not db_user:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f'User with id "{id}" not found'
         )
-    return User(**user)
+    return User(**db_user)

@@ -18,6 +18,7 @@ router = APIRouter()
 def signup(request: Request, user: UserWithPassword):
     user.password = encrypt_user_pwd(user.password)
     user_repo: UserRepository = request.app.repository.user
-    new_user = user_repo.create(jsonable_encoder(user))
-    logger.debug('User created: %s', json.dumps(new_user))
-    return new_user
+    json_user = jsonable_encoder(user)
+    db_user = User(**user_repo.create(json_user))
+    logger.debug('User created: %s', db_user)
+    return db_user
