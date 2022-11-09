@@ -1,8 +1,8 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, HttpUrl
 
 
 class FollowRssFeed(BaseModel):
-    url: str
+    url: HttpUrl
 
 
 class UnfollowRssFeed(BaseModel):
