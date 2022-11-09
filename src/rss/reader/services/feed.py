@@ -40,8 +40,7 @@ async def update_feed_async(feed_id: str, feed_url: str):
         rss_data = get_feed_from_url(feed_url)
         feed = RssFeed(**db_feed)
         rss.update_feed(rss_data=rss_data, feed=feed)
-        repo.feed.update(filter={'_id': feed.id},
-                         document=jsonable_encoder(feed))
+        repo.feed.update_by_id(feed.id, document=jsonable_encoder(feed))
         item_list = rss.get_items(rss_data=rss_data,
                                   feed_id=feed.id,
                                   user_id=feed.user_id)

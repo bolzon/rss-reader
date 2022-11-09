@@ -33,6 +33,9 @@ class BaseRepository:
         args = {'filter': filter, 'limit': limit} | kwargs
         return list(self.col.find(**args))
 
+    def update_by_id(self, id: str, document: dict[str, Any]) -> dict[str, Any]:
+        return self.update(filter={'_id': id}, document=document)
+
     def update(self, filter: dict[str, Any],
                document: dict[str, Any]) -> dict[str, Any]:
         if '_id' in document:
