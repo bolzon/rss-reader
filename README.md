@@ -4,8 +4,7 @@ API motivated by a Sendcloud assessment.
 
 ## Tech stack
 
-- Python 3.9 + pipenv
-- FastAPI + OpenAPI
+- Python 3.9 + FastAPI + pipenv
 - OAuth2 authentication with user/password
 - Docker container ready
 - MongoDB as storage
