@@ -4,18 +4,20 @@ API motivated by a Sendcloud assessment.
 
 ## Tech stack
 
-- Python 3.9 + FastAPI + pipenv
-- OAuth2 authentication
+- Python 3.9 + pipenv
+- FastAPI + OpenAPI
+- OAuth2 authentication with user/password
 - Docker container ready
-- MongoDB as database
+- MongoDB as storage
 
 ## Env vars
 
-| Var | Description | Example |
-|-----|-------------|---------|
+| Variable | Description | Example |
+|:---------|:------------|:--------|
 | JWT_SECRET | Secret to encrypt user passwords. | 26faa9...58d95d |
 | MONGO_URL | Database url. | mongodb://127.0.0.1:21017 |
 | MONGO_DB_NAME | Database name. | rss_reader |
+| TOKEN_EXPIRATION_MIN | Token expiration time in minutes. | 15 |
 
 JWT_SECRET can be randomly generated with openssl.
 
