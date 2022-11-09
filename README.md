@@ -25,7 +25,14 @@ $ openssl rand -hex 32
 
 ## Install and run
 
-### Docker
+Application uses MongoDB to store data, so if you don't have a running MongoDB instance in your environment,
+you can run it on a docker container before you start the application.
+
+```sh
+$ docker run -d --rm --network host mongo
+```
+
+### Docker container
 
 Go to `src/` folder and create the updated `requirements.txt` file.
 
@@ -47,7 +54,7 @@ $ docker run -it --rm --name rss-reader --network host sendcloud/rss-reader:late
 
 To run the application in background, remove `-it` and add `-d` (detached) arg from the command line above.
 
-### Run in dev mode
+### Local dev mode
 
 Go to `src/` folder and install project dependencies.
 
@@ -58,7 +65,7 @@ $ pipenv install
 Run the application.
 
 ```sh
-$ pipenv run uvicorn rss.reader.main:app --reload
+$ pipenv run app
 ```
 
 Server URL:
