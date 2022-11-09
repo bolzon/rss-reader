@@ -35,7 +35,7 @@ def follow(request: Request, feed: FollowRssFeed):
     feed_repo: FeedRepository = request.app.repository.feed
     logger.debug('Checking existing feed: %s', feed.url)
     db_feed = feed_repo.get(filter={'user_id': request.user.id,
-                                    'url': feed.url})
+                                    'url': feed.url.lower()})
     if not db_feed:
         logger.debug('No feed found, creating one')
         try:
