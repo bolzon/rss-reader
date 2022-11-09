@@ -12,7 +12,7 @@ from rss.reader.models.auth import AuthToken
 
 JWT_ALG = Algorithms.HS256
 JWT_SECRET = os.environ['JWT_SECRET']
-TOKEN_EXPIRATION_MIN = 15
+TOKEN_EXPIRATION_MIN = int(os.getenv('TOKEN_EXPIRATION_MIN', 15))
 
 
 logger = logging.getLogger(__name__)
