@@ -15,20 +15,22 @@ logger = logging.getLogger(__name__)
 router = APIRouter()
 
 
-@router.post('/', responses={status.HTTP_200_OK: {'model': AuthToken},
-                             status.HTTP_401_UNAUTHORIZED: {'model': Unauthorized}})
+@router.post('/', response_model=AuthToken,
+             responses={status.HTTP_401_UNAUTHORIZED: {'model': Unauthorized}})
 def login(request: Request, form_data: OAuth2PasswordRequestForm = Depends()):
-    not_authorized = HTTPException(
-        status_code=status.HTTP_401_UNAUTHORIZED,
-        detail='Invalid email or password.'
-    )
+    not_authorized = HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
+                                   detail='Invalid email or password.')
     user_repo: UserRepository = request.app.repository.user
-    db_user = user_repo.get(filter={'email': form_data.username}, return_password=True)
+    db_user = user_repo.get(filter={'email': form_data.username},
+                            return_password=True)
     if not db_user:
         raise not_authorized
     user = UserWithPassword(**db_user)
     if not verify_user_pwd(form_data.password, user.password):
         raise not_authorized
+
+    # token content below is open but could be
+    # encrypted to ensure higher application security
     return create_token({
         'user': {
             'id': user.id,

@@ -1,4 +1,3 @@
-import json
 import logging
 
 from fastapi import APIRouter, Request, status
@@ -22,4 +21,4 @@ def signup(request: Request, user: SignupUser):
     domain_user = UserWithPassword(**jsonable_encoder(user))
     db_user = user_repo.create(jsonable_encoder(domain_user))
     logger.debug('User created: %s', db_user)
-    return User(**db_user)
+    return db_user

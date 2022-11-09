@@ -32,26 +32,28 @@ def get_feed_from_url(url: str) -> OrderedDict[str, Any]:
     return xmltodict.parse(res.content)
 
 
-async def update_feed_async(feed_id: str, feed_url: str):
-    repo = get_repository()
+async def update_feed_async(feed_id: str, repository: Repository = None):
+    if not repository:
+        repository = get_repository()
     try:
-        db_feed = repo.feed.get_by_id(feed_id)
+        db_feed = repository.feed.get_by_id(feed_id)
+        feed_url = db_feed['url']
         logger.debug('Getting feed from url: %s', feed_url)
         rss_data = get_feed_from_url(feed_url)
         feed = RssFeed(**db_feed)
         rss.update_feed(rss_data=rss_data, feed=feed)
-        repo.feed.update_by_id(feed.id, document=jsonable_encoder(feed))
+        repository.feed.update_by_id(feed.id, document=jsonable_encoder(feed))
         item_list = rss.get_items(rss_data=rss_data,
                                   feed_id=feed.id,
                                   user_id=feed.user_id)
-        repo.item.create_many(jsonable_encoder(item_list.items))
+        repository.item.create_many(jsonable_encoder(item_list.items))
     except Exception as e:
         logger.error(e)
     finally:
-        repo.close()
+        repository.close()
 
 
-def execute_update_feed(feed_id: str, feed_url: str = None):
+def execute_update_feed(feed_id: str, repository: Repository = None):
     # TODO supposed to use dramatiq
     logger.debug('Async updating feed: %s', feed_id)
-    asyncio.run(update_feed_async(feed_id=feed_id, feed_url=feed_url))
+    asyncio.run(update_feed_async(feed_id=feed_id, repository=repository))

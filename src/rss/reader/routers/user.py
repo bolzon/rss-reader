@@ -24,8 +24,6 @@ def get_user(request: Request, id: str):
     user_repo: UserRepository = request.app.repository.user
     db_user = user_repo.get(filter={'_id': id})
     if not db_user:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=f'User with id "{id}" not found'
-        )
-    return User(**db_user)
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail=f'User with id "{id}" not found')
+    return db_user

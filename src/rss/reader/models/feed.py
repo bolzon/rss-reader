@@ -11,3 +11,6 @@ class UnfollowRssFeed(BaseModel):
 
 class ListRssItems(BaseModel):
     id: str
+
+class ForceUpdateRssFeed(BaseModel):
+    id: str
