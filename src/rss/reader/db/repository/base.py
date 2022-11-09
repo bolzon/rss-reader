@@ -2,6 +2,8 @@ import logging
 
 from typing import Any, Union
 
+from pymongo.results import UpdateResult
+
 from rss.reader.db.provider import DbProvider
 
 
@@ -33,15 +35,14 @@ class BaseRepository:
         args = {'filter': filter, 'limit': limit} | kwargs
         return list(self.col.find(**args))
 
-    def update_by_id(self, id: str, document: dict[str, Any]) -> dict[str, Any]:
+    def update_by_id(self, id: str, document: dict[str, Any]) -> UpdateResult:
         return self.update(filter={'_id': id}, document=document)
 
     def update(self, filter: dict[str, Any],
-               document: dict[str, Any]) -> dict[str, Any]:
+               document: dict[str, Any]) -> UpdateResult:
         if '_id' in document:
             del document['_id']
-        self.col.update_one(filter=filter, update={'$set': document})
-        return self.get(filter=filter)
+        return self.col.update_one(filter=filter, update={'$set': document})
 
     def delete(self, filter: dict[str, Any]) -> int:
         res = self.col.delete_one(filter=filter)

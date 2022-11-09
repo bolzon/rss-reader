@@ -3,7 +3,6 @@ import logging
 from typing import Union
 
 from fastapi import APIRouter, HTTPException, Request, status
-from fastapi.encoders import jsonable_encoder
 
 from rss.reader.db.repository.feed import FeedRepository
 from rss.reader.db.repository.item import ItemRepository
@@ -45,22 +44,20 @@ def list_items_from_feed(request: Request, feed_id: str, is_read: Union[bool, No
 @router.post('/{id}/read', responses={status.HTTP_404_NOT_FOUND: {'model': NotFound}})
 def mark_as_read(request: Request, id: str):
     item_repo: ItemRepository = request.app.repository.item
-    db_item = item_repo.get_by_id(id)
-    if not db_item:
+    res = item_repo.update_by_id(id=id, document={'is_read': True})
+    if res.matched_count == 0:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f'Item with id "{id}" not found'
         )
-    item_repo.update_by_id(id=id, document={'is_read': True})
 
 
 @router.post('/{id}/unread', responses={status.HTTP_404_NOT_FOUND: {'model': NotFound}})
 def mark_as_unread(request: Request, id: str):
     item_repo: ItemRepository = request.app.repository.item
-    db_item = item_repo.get_by_id(id)
-    if not db_item:
+    res = item_repo.update_by_id(id=id, document={'is_read': False})
+    if not res.matched_count == 0:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f'Item with id "{id}" not found'
         )
-    item_repo.update_by_id(id=id, document={'is_read': False})
