@@ -73,7 +73,7 @@ def list_items(request: Request, feed_id: str):
     if not db_feed:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail=f'Feed with id "{id}" not found'
+            detail=f'Feed with id "{feed_id}" not found'
         )
     item_repo: ItemRepository = request.app.repository.item
     return RssItemList(items=item_repo.get_all_by_user_feed(
