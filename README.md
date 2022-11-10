@@ -7,7 +7,8 @@ API motivated by a Sendcloud assessment.
 - Python 3.9 + FastAPI + pipenv
 - OAuth2 authentication with user/password
 - Docker container ready
-- MongoDB as storage
+- MongoDB as domain storage
+- Redis as message broker (for background async tasks)
 
 ## Env vars
 
@@ -26,11 +27,14 @@ $ openssl rand -hex 32
 
 ## Install and run
 
-Application uses MongoDB to store data, so if you don't have a running MongoDB instance in your environment,
-you can run it on a docker container before you start the application.
+Application uses MongoDB and Redis to store data and control processing workflows.
+
+If you don't have those tools in your local environment, you can
+easily run those on a docker container before you start the application.
 
 ```sh
 $ docker run -d --rm --network host mongo
+$ docker run -d --rm --network host redis
 ```
 
 ### Docker container
