@@ -5,7 +5,7 @@ from rss.reader.domain.rss_feed import RssFeed
 from rss.reader.domain.rss_item import RssItem, RssItemList
 
 
-def update_feed(rss_data: dict[str, Any], feed: RssFeed):
+def load_feed(rss_data: dict[str, Any], feed: RssFeed):
     channel = rss_data.get('rss', {}).get('channel', {})
     if not channel:
         return None
@@ -14,7 +14,7 @@ def update_feed(rss_data: dict[str, Any], feed: RssFeed):
     feed.description = channel.get('description')
 
 
-def get_items(rss_data: dict[str, Any], feed_id: str, user_id: str) -> RssItemList:
+def load_items(rss_data: dict[str, Any], feed_id: str, user_id: str) -> RssItemList:
     item_list = RssItemList()
     if channel := rss_data.get('rss', {}).get('channel', {}):
         for channel_item in channel.get('item', []):

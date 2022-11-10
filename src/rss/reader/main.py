@@ -14,6 +14,7 @@ from rss.reader.middlewares import config_middlewares
 from rss.reader.openapi import config_openapi
 from rss.reader.routes import config_routes
 from rss.reader.startup import config_startup
+from rss.reader.tasks import config_tasks
 
 
 logger = logging.getLogger(__name__)
@@ -24,5 +25,6 @@ config_startup(app)
 config_middlewares(app)
 config_routes(app)
 config_openapi(app)
+config_tasks()
 
 logger.info('Server up')

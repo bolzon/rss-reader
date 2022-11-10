@@ -9,7 +9,7 @@ from rss.reader.domain.rss_feed import RssFeed, RssFeedList
 from rss.reader.models.deleted import DeletedResponse
 from rss.reader.models.feed import FollowRssFeed, ForceUpdateRssFeed, UnfollowRssFeed
 from rss.reader.models.not_found import NotFound
-from rss.reader.services.feed import execute_update_feed
+from rss.reader.workers.feeds import update as update_feeds
 
 
 logger = logging.getLogger(__name__)
@@ -26,7 +26,7 @@ def list_feeds(request: Request):
 @router.put('/', response_model=RssFeed)
 def force_update(request: Request, feed: ForceUpdateRssFeed):
     feed_repo: FeedRepository = request.app.repository.feed
-    execute_update_feed(feed_id=feed.id, repository=request.app.repository)
+    update_feeds([feed.id])
     return feed_repo.get_by_id(feed.id)
 
 
@@ -44,10 +44,7 @@ def follow(request: Request, feed: FollowRssFeed):
                         url=feed.url.lower())
             ))
             logger.debug('Feed created: %s', db_feed)
-            domain_feed = RssFeed(**db_feed)
-            execute_update_feed(feed_id=domain_feed.id,
-                                repository=request.app.repository)
-            db_feed = feed_repo.get_by_id(domain_feed.id)
+            update_feeds([feed.id])
         except Exception as e:
             logger.exception(e)
     return db_feed
