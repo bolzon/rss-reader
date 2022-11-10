@@ -11,6 +11,15 @@ class FeedRepository(BaseRepository):
     def create(self, feed: dict[str, Any]) -> dict[str, Any]:
         return super().create(feed)
 
+    def get_urls_by_ids(self, ids: list[str], limit: int = 1000) -> Union[dict[str, str], None]:
+        '''Return only feed ids and their urls to improve performance.
+            [{ '<feed_id>': '<url>' }, {...}]
+        '''
+        args = {'projection': {'_id': 1, 'url': 1}}
+        if feeds := self.get_all(filter={'_id': {'$in': ids}}, limit=limit, **args):
+            return [{f['_id']: f['url']} for f in feeds]
+        return None
+
     def get_by_user(self, user_id: str) -> Union[dict[str, Any], None]:
         return self.get(filter={'user_id': user_id})
 
