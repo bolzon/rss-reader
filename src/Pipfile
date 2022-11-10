@@ -14,6 +14,7 @@ python-jose = {extras = ["cryptography"], version = "*"}
 requests = "*"
 xmltodict = "*"
 python-dateutil = "*"
+dramatiq = {extras = ["redis", "watch"], version = "*"}
 
 [dev-packages]
 pycodestyle = "*"
@@ -27,3 +28,4 @@ python_version = "3.9"
 app = "uvicorn rss.reader.main:app --reload"
 lint = "pylint rss/"
 pep8 = "autopep8 -ri rss/"
+worker = "dramatiq rss.reader.workers.update_feeds:execute_update --watch ."
