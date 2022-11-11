@@ -23,7 +23,8 @@ def list_feeds(request: Request):
     return RssFeedList(feeds=feed_repo.get_all_by_user(user_id=request.user.id))
 
 
-@router.put('/', response_model=RssFeed)
+@router.put('/', response_model=RssFeed,
+            status_code=status.HTTP_202_ACCEPTED)
 def force_update(request: Request, feed: ForceUpdateRssFeed):
     feed_repo: FeedRepository = request.app.repository.feed
     update_feeds([feed.id])
