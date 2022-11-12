@@ -1,5 +1,8 @@
+import asyncio
 import logging
 import os
+
+from time import monotonic
 
 import dramatiq
 
@@ -19,6 +22,11 @@ redis_broker = RedisBroker(namespace='rss_reader')
 dramatiq.set_broker(redis_broker)
 
 
+@dramatiq.actor
+def worker_update_feeds(feed_ids: list[str]):
+    asyncio.run(async_update_feeds(feed_ids))
+
+
 def get_repository() -> Repository:
     global repository
     if not repository:
@@ -27,30 +35,66 @@ def get_repository() -> Repository:
     return repository
 
 
-def update_feeds_db():
-    '''Update a few (up to 1000) feeds in the database at a time.'''
+async def task_update_feeds(queue: asyncio.Queue):
+    repository = get_repository()
+    while True:
+        idx, feed_id, feed_dict = await queue.get()
+        logger.debug('[Worker %d] Getting feed from url: %s',
+                     idx, feed_dict['url'])
+
+        try:
+            rss_data = rss.get_json_feed_from_url(feed_dict['url'])
+            if not rss_data:
+                logger.info('Invalid feed URL: %s (%s)',
+                            feed_dict['url'], feed_id)
+                queue.task_done()
+                continue
+
+            feed_dict |= rss.load_feed(rss_data=rss_data, feed=feed_dict)
+            item_list = rss.load_items(rss_data=rss_data, feed_id=feed_id,
+                                       user_id=feed_dict['user_id'])
+            feed_dict = exclude_none_keys(feed_dict)
+        except Exception as e:
+            print(e)
+
+        logger.debug('[Worker %d] Updating feed %s: %s',
+                     idx, feed_id, feed_dict)
+        repository.feed.update_by_id(feed_id, document=feed_dict)
+
+        # switch by update_many with upsert option
+        logger.debug('[Worker %d] Updating items of feed %s', idx, feed_id)
+        repository.item.create_many(jsonable_encoder(item_list.items))
+        queue.task_done()
 
 
-def update_many(feed_ids: list[str]):
-    '''Update many (more than 1000) feeds in the database in a concurrent way.'''
+async def async_update_feeds(feed_ids: list[str]):
+    logger.info('Triggered update feeds for IDs: %s', feed_ids)
 
-
-@dramatiq.actor
-def update(feed_ids: list[str]):
     repository = get_repository()
     feeds = repository.feed.get_by_ids(feed_ids)
 
-    # queue = asyncio.Queue()
-    # for feed in feeds:
-    #     queue.put_nowait(feed)
+    queue = asyncio.Queue()
+    for idx, (feed_id, feed_dict) in enumerate(feeds.items()):
+        # used tuple for easy access
+        queue.put_nowait((idx + 1, feed_id, feed_dict))
 
-    for feed_id, feed_dict in feeds.items():
-        logger.debug('Getting feed from url: %s', feed_dict['url'])
-        rss_data = rss.get_json_feed_from_url(feed_dict['url'])
-        feed_dict |= rss.load_feed(rss_data=rss_data, feed=feed_dict)
-        item_list = rss.load_items(rss_data=rss_data, feed_id=feed_id,
-                                   user_id=feed_dict['user_id'])
-        feed_dict = exclude_none_keys(feed_dict)
-        repository.feed.update_by_id(feed_id, document=feed_dict)
-        # switch by update_many with upsert option
-        repository.item.create_many(jsonable_encoder(item_list.items))
+    tasks = []
+    num_of_feeds = len(feed_ids)
+    num_of_tasks = min(NUM_OF_WORKERS, num_of_feeds)
+
+    logger.info('Updating feeds in %d task(s)', num_of_tasks)
+
+    for i in range(num_of_tasks):
+        tasks.append(asyncio.create_task(task_update_feeds(queue)))
+
+    start_time = monotonic()
+    await queue.join()
+    time_taken = monotonic() - start_time
+
+    logger.info('Time taken updating %d feed(s): %ds',
+                num_of_feeds, time_taken)
+
+    for task in tasks:
+        task.cancel()
+
+    await asyncio.gather(*tasks, return_exceptions=True)

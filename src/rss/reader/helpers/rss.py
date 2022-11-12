@@ -2,7 +2,7 @@ import logging
 
 from collections import OrderedDict
 from dateutil.parser import parse
-from typing import Any
+from typing import Any, Union
 
 import requests
 import xmltodict
@@ -13,12 +13,14 @@ from rss.reader.domain.rss_item import RssItem, RssItemList
 logger = logging.getLogger(__name__)
 
 
-def get_json_feed_from_url(url: str) -> OrderedDict[str, Any]:
+def get_json_feed_from_url(url: str) -> Union[OrderedDict[str, Any], None]:
     '''Requests RSS url and returns XML content as JSON (dict).'''
-    res = requests.get(url, timeout=20)
+    res = requests.get(url, allow_redirects=True, timeout=20)
     content_type = res.headers.get('content-type', '').lower()
-    if content_type.find('application/rss+xml') < 0:
-        raise RuntimeError(f'Invalid content type: {content_type}')
+    if content_type.find('xml') < 0:
+        logger.debug('Invalid content type for URL: %s (%s)',
+                     url, content_type)
+        return None
     return xmltodict.parse(res.content)
 
 
