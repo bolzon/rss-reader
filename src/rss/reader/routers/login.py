@@ -1,12 +1,13 @@
 import logging
 
-from fastapi import APIRouter, Depends, HTTPException, Request, status
+from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 
 from rss.reader.auth.pwd import verify_user_pwd
 from rss.reader.auth.token import create_token
-from rss.reader.db.repository.user import UserRepository
+from rss.reader.db.repository import Repository
 from rss.reader.domain.user import UserWithPassword
+from rss.reader.injections.repo import db_repo
 from rss.reader.models.auth import AuthToken, Unauthorized
 
 
@@ -17,11 +18,10 @@ router = APIRouter()
 
 @router.post('/', response_model=AuthToken,
              responses={status.HTTP_401_UNAUTHORIZED: {'model': Unauthorized}})
-def login(request: Request, form_data: OAuth2PasswordRequestForm = Depends()):
+def login(form_data: OAuth2PasswordRequestForm = Depends(), repo: Repository = Depends(db_repo)):
     not_authorized = HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
                                    detail='Invalid email or password.')
-    user_repo: UserRepository = request.app.repository.user
-    db_user = user_repo.get(filter={'email': form_data.username},
+    db_user = repo.user.get(filter={'email': form_data.username},
                             return_password=True)
     if not db_user:
         raise not_authorized
