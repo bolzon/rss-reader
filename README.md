@@ -70,8 +70,9 @@ $ pipenv run lint
 ## Not implemented
 
 There are some features that were not implemented but it would
-certainly be nice to have.
-I list those below, so you can have an idea of what I've thought
-to implement while designing and coding this application.
+certainly be nice to have. I list those below, so you can have
+an idea of what I've thought to implement while designing and
+coding this application.
 
-- Pagination: crucial for any API, but not fully implemented here
+- pagination for the listings
+- pattern check for user passwords
