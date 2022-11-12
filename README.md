@@ -44,12 +44,12 @@ $ docker-compose build
 $ docker-compose up -d
 ```
 
-### Local dev mode
+## Dev mode
 
-Go to `src/` folder, install deps and run.
+Go to `src/` folder, install dev deps and run.
 
 ```sh
-$ pipenv install
+$ pipenv install --dev
 $ pipenv run app
 ```
 
@@ -58,6 +58,16 @@ Server URL:
 
 Docs URL (OpenAPI):
   - https://127.0.0.1:8000/docs
+
+
+## Test
+
+Go to `src/` folder, install dev deps and run.
+
+```sh
+$ pipenv install --dev
+$ pipenv run test
+```
 
 ## Pylint
 
