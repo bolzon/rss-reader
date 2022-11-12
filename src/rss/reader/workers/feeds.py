@@ -93,7 +93,7 @@ async def async_update_feeds(feed_ids: list[str]):
 
     logger.info('Updating feeds in %d task(s)', num_of_tasks)
 
-    for i in range(num_of_tasks):
+    for _ in range(num_of_tasks):
         tasks.append(asyncio.create_task(task_update_feeds(queue)))
 
     start_time = monotonic()
