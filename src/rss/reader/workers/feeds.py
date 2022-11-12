@@ -56,14 +56,14 @@ async def task_update_feeds(queue: asyncio.Queue):
 
         rss_data = rss.get_json_feed_from_url(feed_dict['url'])
         if not rss_data:
-            logger.info('Invalid feed URL: %s (%s)',
-                        feed_dict['url'], feed_id)
+            logger.info('[Worker %d] Invalid feed URL: %s (%s)',
+                        idx, feed_dict['url'], feed_id)
             queue.task_done()
             continue
 
         feed_dict |= rss.load_feed(rss_data=rss_data, feed=feed_dict)
         item_list = rss.load_items(rss_data=rss_data, feed_id=feed_id,
-                                    user_id=feed_dict['user_id'])
+                                   user_id=feed_dict['user_id'])
         feed_dict = exclude_none_keys(feed_dict)
 
         logger.debug('[Worker %d] Updating feed %s: %s',
