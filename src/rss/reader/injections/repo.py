@@ -1,12 +1,14 @@
 import logging
 
+from typing import Generator
+
 from rss.reader.db.repository import Repository, RepositoryFactory
 
 
 logger = logging.getLogger(__name__)
 
 
-def db_repo() -> Repository:
+def db_repo() -> Generator[Repository]:
     repo: Repository = RepositoryFactory.create()
     try:
         yield repo
