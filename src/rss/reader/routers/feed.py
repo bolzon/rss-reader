@@ -1,11 +1,13 @@
 import logging
 
-from fastapi import APIRouter, HTTPException, Request, status
+from fastapi import APIRouter, Depends, HTTPException, Request, status
 from fastapi.encoders import jsonable_encoder
+from rss.reader.db.repository import Repository
 
 from rss.reader.db.repository.feed import FeedRepository
 from rss.reader.db.repository.item import ItemRepository
 from rss.reader.domain.rss_feed import RssFeed, RssFeedList
+from rss.reader.injections.repo import db_repo
 from rss.reader.models.deleted import DeletedResponse
 from rss.reader.models.feed import FollowRssFeed, ForceUpdateRssFeed, UnfollowRssFeed
 from rss.reader.models.not_found import NotFound
@@ -18,35 +20,32 @@ router = APIRouter()
 
 
 @router.get('/', response_model=RssFeedList)
-def list_feeds(request: Request):
-    feed_repo: FeedRepository = request.app.repository.feed
-    return RssFeedList(feeds=feed_repo.get_all_by_user(user_id=request.user.id))
+def list_feeds(request: Request, repo: Repository = Depends(db_repo)):
+    return RssFeedList(feeds=repo.feed.get_all_by_user(user_id=request.user.id))
 
 
 @router.put('/', response_model=RssFeed,
             status_code=status.HTTP_202_ACCEPTED,
             responses={status.HTTP_404_NOT_FOUND: {'model': NotFound}})
-def force_update(request: Request, feed: ForceUpdateRssFeed):
-    feed_repo: FeedRepository = request.app.repository.feed
-    db_feed = feed_repo.get(filter={'_id': feed.id,
+def force_update(request: Request, feed: ForceUpdateRssFeed, repo: Repository = Depends(db_repo)):
+    db_feed = repo.feed.get(filter={'_id': feed.id,
                                     'user_id': request.user.id})
     if not db_feed:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                             detail=f'Feed with id "{id}" not found')
     worker_update_feeds.send([feed.id])
-    return feed_repo.get_by_id(feed.id)
+    return repo.feed.get_by_id(feed.id)
 
 
 @router.post('/follow', response_model=RssFeed)
-def follow(request: Request, feed: FollowRssFeed):
-    feed_repo: FeedRepository = request.app.repository.feed
+def follow(request: Request, feed: FollowRssFeed, repo: Repository = Depends(db_repo)):
     logger.debug('Checking existing feed: %s', feed.url)
-    db_feed = feed_repo.get(filter={'user_id': request.user.id,
+    db_feed = repo.feed.get(filter={'user_id': request.user.id,
                                     'url': feed.url.lower()})
     if not db_feed:
         logger.debug('No feed found, creating one')
         try:
-            db_feed = feed_repo.create(jsonable_encoder(
+            db_feed = repo.feed.create(jsonable_encoder(
                 RssFeed(user_id=request.user.id,
                         url=feed.url.lower())
             ))
@@ -59,14 +58,13 @@ def follow(request: Request, feed: FollowRssFeed):
 
 @router.post('/unfollow', response_model=DeletedResponse,
              responses={status.HTTP_404_NOT_FOUND: {'model': NotFound}})
-def unfollow(request: Request, feed: UnfollowRssFeed):
-    feed_repo: FeedRepository = request.app.repository.feed
-    db_feed = feed_repo.get_by_id(feed.id)
+def unfollow(request: Request, feed: UnfollowRssFeed, repo: Repository = Depends(db_repo)):
+    db_feed = repo.feed.get_by_id(feed.id)
     if not db_feed:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                             detail=f'Feed with id "{id}" not found')
     item_repo: ItemRepository = request.app.repository.item
     items_count = item_repo.delete_all(filter={'user_id': request.user.id,
                                                'feed_id': feed.id})
-    feed_count = feed_repo.delete(filter={'_id': feed.id})
+    feed_count = repo.feed.delete(filter={'_id': feed.id})
     return DeletedResponse(deleted=items_count + feed_count)
