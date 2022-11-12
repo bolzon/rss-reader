@@ -66,13 +66,3 @@ Static code analysis is made by [pylint](https://pylint.pycqa.org/).
 ```sh
 $ pipenv run lint
 ```
-
-## Not implemented
-
-There are some features that were not implemented but it would
-certainly be nice to have. I list those below, so you can have
-an idea of what I've thought to implement while designing and
-coding this application.
-
-- pagination for the listings
-- pattern check for user passwords
