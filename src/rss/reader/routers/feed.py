@@ -63,8 +63,7 @@ def unfollow(request: Request, feed: UnfollowRssFeed, repo: Repository = Depends
     if not db_feed:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                             detail=f'Feed with id "{id}" not found')
-    item_repo: ItemRepository = request.app.repository.item
-    items_count = item_repo.delete_all(filter={'user_id': request.user.id,
+    items_count = repo.item.delete_all(filter={'user_id': request.user.id,
                                                'feed_id': feed.id})
     feed_count = repo.feed.delete(filter={'_id': feed.id})
     return DeletedResponse(deleted=items_count + feed_count)
