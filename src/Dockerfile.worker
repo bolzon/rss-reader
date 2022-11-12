@@ -1,4 +1,0 @@
-ARG BASE
-FROM $BASE
-ENTRYPOINT ["dramatiq"]
-CMD ["rss.reader.workers.feeds:worker_update_feeds"]

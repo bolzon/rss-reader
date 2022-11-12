@@ -29,19 +29,7 @@ $ openssl rand -hex 32
 
 ## Install and run
 
-Application uses MongoDB and Redis to store data and control processing workflows.
-
-If you don't have those tools in your local environment, you can
-easily run those on a docker container before you start the application.
-
-```sh
-$ docker run -d --rm --network host mongo
-$ docker run -d --rm --network host redis
-```
-
-### Docker
-
-Application and its dependencies run in containers and to execute them it uses docker-compose.
+Application and its dependencies run in containers, use docker-compose to execute altogether.
 
 First go to `src/` folder and create an updated `requirements.txt` file.
 
@@ -49,7 +37,7 @@ First go to `src/` folder and create an updated `requirements.txt` file.
 $ pipenv lock -r > requirements.txt
 ```
 
-Build the docker images.
+Build the app docker image.
 
 ```sh
 $ docker-compose build

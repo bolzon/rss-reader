@@ -1,3 +1,11 @@
+from logging.config import fileConfig
+
+from dotenv import load_dotenv
+
+load_dotenv('.env')
+fileConfig('logging.ini')
+
+
 import asyncio
 import logging
 import os
