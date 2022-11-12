@@ -3,6 +3,7 @@ import logging
 import os
 
 from time import monotonic
+from typing import Any, Union
 
 import dramatiq
 
@@ -14,7 +15,12 @@ from rss.reader.helpers import rss
 from rss.reader.helpers.commons import exclude_none_keys
 
 
+# when number of feeds is greater than this limit,
+# update will happen in parts no greater than it
+FEED_SPLIT_COUNT = 2
+
 NUM_OF_WORKERS = os.cpu_count()
+
 
 logger = logging.getLogger(__name__)
 repository: Repository = None
@@ -23,8 +29,15 @@ dramatiq.set_broker(redis_broker)
 
 
 @dramatiq.actor
-def worker_update_feeds(feed_ids: list[str]):
-    asyncio.run(async_update_feeds(feed_ids))
+def worker_update_feeds(feed_ids: Union[list[str], None] = None):
+    if feed_ids:
+        asyncio.run(async_update_feeds(feed_ids))
+    # else:
+    #     repository = get_repository()
+    #     num_of_chunks = 1
+    #     feeds_count = repository.feed.count()
+    #     if feeds_count > FEED_SPLIT_COUNT:
+    #         num_of_chunks = feeds_count / FEED_SPLIT_COUNT
 
 
 def get_repository() -> Repository:

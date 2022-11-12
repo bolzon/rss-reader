@@ -23,6 +23,9 @@ class BaseRepository:
         res = self.col.insert_many(documents)
         return list(res.inserted_ids)
 
+    def count(self, filter: dict[str, Any] = {}, **kwargs) -> int:
+        return self.col.count_documents(filter=filter, **kwargs)
+
     def get(self, filter: dict[str, Any], **kwargs) -> Union[dict[str, Any], None]:
         args = {'filter': filter} | kwargs
         return self.col.find_one(**args)

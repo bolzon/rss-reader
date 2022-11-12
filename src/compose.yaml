@@ -8,12 +8,24 @@ services:
     image: redis
     container_name: redis
     network_mode: host
-  api:
+  worker:
     build:
       context: .
+      dockerfile: Dockerfile.worker
+    image: sendcloud/rss-worker:latest
+    container_name: rss_worker
+    network_mode: host
+    depends_on:
+      - mongo
+      - redis
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: sendcloud/rss-reader:latest
     container_name: rss_reader
     network_mode: host
     depends_on:
-    - mongo
-    - redis
+      - mongo
+      - redis
+      - worker

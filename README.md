@@ -25,7 +25,7 @@ JWT_SECRET can be randomly generated with openssl.
 $ openssl rand -hex 32
 ```
 
-> **Application loads env vars from a ".env" file in "src" folder.**
+> **Application loads env vars from a `.env` file in `src/` folder.**
 
 ## Install and run
 
@@ -39,27 +39,27 @@ $ docker run -d --rm --network host mongo
 $ docker run -d --rm --network host redis
 ```
 
-### Docker container
+### Docker
 
-Go to `src/` folder and create the updated `requirements.txt` file.
+Application and its dependencies run in containers and to execute them it uses docker-compose.
+
+First go to `src/` folder and create an updated `requirements.txt` file.
 
 ```sh
 $ pipenv lock -r > requirements.txt
 ```
 
-Build the docker image.
+Build the docker images.
 
 ```sh
-$ docker build -t sendcloud/rss-reader:latest .
+$ docker-compose build
 ```
 
-Run the container.
+Run the application.
 
 ```sh
-$ docker run -it --rm --name rss-reader --network host sendcloud/rss-reader:latest
+$ docker-compose up -d
 ```
-
-To run the application in background, remove `-it` and add `-d` (detached) arg from the command line above.
 
 ### Local dev mode
 
@@ -89,10 +89,11 @@ Static code analysis is made by [pylint](https://pylint.pycqa.org/).
 $ pipenv run lint
 ```
 
-## PEP 8
+## Not implemented
 
-PEP 8 style conventions is checked by [pycodestyle](https://github.com/PyCQA/pycodestyle).
+There are some features that were not implemented but it would
+certainly be nice to have, once I had more time to focus on it.
+I list those below, so you can have an idea of what I've thought
+to implement while designing and coding this application.
 
-```sh
-$ pipenv run pep8
-```
+- Pagination: crucial for any API, but not fully implemented here
