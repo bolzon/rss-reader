@@ -20,6 +20,7 @@ dramatiq = {extras = ["redis", "watch"], version = "*"}
 pycodestyle = "*"
 pylint = "*"
 autopep8 = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.9"

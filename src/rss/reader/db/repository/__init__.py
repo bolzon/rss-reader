@@ -1,3 +1,5 @@
+import os
+
 from rss.reader.db.provider import DbProvider
 from rss.reader.db.repository.feed import FeedRepository
 from rss.reader.db.repository.item import ItemRepository
@@ -13,3 +15,10 @@ class Repository:
 
     def close(self):
         self.db_provider.close()
+
+
+class RepositoryFactory:
+    @staticmethod
+    def create() -> Repository:
+        return Repository(mongo_url=os.environ['MONGO_URL'],
+                          mongo_dbname=os.environ['MONGO_DB_NAME'])
