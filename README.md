@@ -37,29 +37,19 @@ First go to `src/` folder and create an updated `requirements.txt` file.
 $ pipenv lock -r > requirements.txt
 ```
 
-Build the app docker image.
+Build and run.
 
 ```sh
 $ docker-compose build
-```
-
-Run the application.
-
-```sh
 $ docker-compose up -d
 ```
 
 ### Local dev mode
 
-Go to `src/` folder and install project dependencies.
+Go to `src/` folder, install deps and run.
 
 ```sh
 $ pipenv install
-```
-
-Run the application.
-
-```sh
 $ pipenv run app
 ```
 
@@ -80,7 +70,7 @@ $ pipenv run lint
 ## Not implemented
 
 There are some features that were not implemented but it would
-certainly be nice to have, once I had more time to focus on it.
+certainly be nice to have.
 I list those below, so you can have an idea of what I've thought
 to implement while designing and coding this application.
 
