@@ -25,6 +25,8 @@ JWT_SECRET can be randomly generated with openssl.
 $ openssl rand -hex 32
 ```
 
+> **Application loads env vars from a ".env" file in "src" folder.**
+
 ## Install and run
 
 Application uses MongoDB and Redis to store data and control processing workflows.
