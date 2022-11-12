@@ -1,20 +1,41 @@
+import logging
+
+from collections import OrderedDict
 from dateutil.parser import parse
 from typing import Any
 
-from rss.reader.domain.rss_feed import RssFeed
+import requests
+import xmltodict
+
 from rss.reader.domain.rss_item import RssItem, RssItemList
 
 
-def load_feed(rss_data: dict[str, Any], feed: RssFeed):
+logger = logging.getLogger(__name__)
+
+
+def get_json_feed_from_url(url: str) -> OrderedDict[str, Any]:
+    '''Requests RSS url and returns XML content as JSON (dict).'''
+    res = requests.get(url, timeout=20)
+    content_type = res.headers.get('content-type', '').lower()
+    if content_type.find('application/rss+xml') < 0:
+        raise RuntimeError(f'Invalid content type: {content_type}')
+    return xmltodict.parse(res.content)
+
+
+def load_feed(rss_data: dict[str, Any], feed: dict[str, Any]) -> dict[str, Any]:
+    '''Loads feed info from RSS and return dict with those info.'''
+    json_feed = {}
     channel = rss_data.get('rss', {}).get('channel', {})
     if not channel:
         return None
-    feed.title = channel.get('title')
-    feed.link = channel.get('link')
-    feed.description = channel.get('description')
+    json_feed['title'] = channel.get('title')
+    json_feed['link'] = channel.get('link')
+    json_feed['description'] = channel.get('description')
+    return json_feed
 
 
 def load_items(rss_data: dict[str, Any], feed_id: str, user_id: str) -> RssItemList:
+    '''Loads items from RSS and return list of dict representing them.'''
     item_list = RssItemList()
     if channel := rss_data.get('rss', {}).get('channel', {}):
         for channel_item in channel.get('item', []):

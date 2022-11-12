@@ -24,10 +24,16 @@ def list_feeds(request: Request):
 
 
 @router.put('/', response_model=RssFeed,
-            status_code=status.HTTP_202_ACCEPTED)
+            status_code=status.HTTP_202_ACCEPTED,
+            responses={status.HTTP_404_NOT_FOUND: {'model': NotFound}})
 def force_update(request: Request, feed: ForceUpdateRssFeed):
     feed_repo: FeedRepository = request.app.repository.feed
-    update_feeds([feed.id])
+    db_feed = feed_repo.get(filter={'_id': feed.id,
+                                    'user_id': request.user.id})
+    if not db_feed:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail=f'Feed with id "{id}" not found')
+    update_feeds.send([feed.id])
     return feed_repo.get_by_id(feed.id)
 
 
@@ -45,7 +51,7 @@ def follow(request: Request, feed: FollowRssFeed):
                         url=feed.url.lower())
             ))
             logger.debug('Feed created: %s', db_feed)
-            update_feeds([feed.id])
+            update_feeds.send([db_feed['_id']])
         except Exception as e:
             logger.exception(e)
     return db_feed
