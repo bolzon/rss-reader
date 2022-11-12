@@ -3,7 +3,7 @@ FROM python:3.9-slim-bullseye
 WORKDIR /app
 
 COPY rss/ ./rss/
-COPY requirements.txt ./
+COPY .env logging.ini requirements.txt ./
 
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt

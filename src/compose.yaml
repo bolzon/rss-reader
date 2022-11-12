@@ -3,18 +3,17 @@ services:
   mongo:
     image: mongo
     container_name: mongo
-    networks: [rss_reader]
+    network_mode: host
   redis:
     image: redis
     container_name: redis
-    networks: [rss_reader]
+    network_mode: host
   api:
     build:
       context: .
-      target: builder
+    image: sendcloud/rss-reader:latest
     container_name: rss_reader
-    networks: [rss_reader]
-networks:
-  rss_reader:
-    name: rss_reader
-    driver: host
+    network_mode: host
+    depends_on:
+    - mongo
+    - redis
