@@ -4,30 +4,31 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-uvicorn = {extras = ["standard"], version = "*"}
-fastapi = "*"
-pymongo = {extras = ["srv"], version = "*"}
-email-validator = "*"
-python-multipart = "*"
-passlib = {extras = ["bcrypt"], version = "*"}
-python-jose = {extras = ["cryptography"], version = "*"}
-requests = "*"
-xmltodict = "*"
-python-dateutil = "*"
+apscheduler = "*"
 dramatiq = {extras = ["redis", "watch"], version = "*"}
+email-validator = "*"
+fastapi = "*"
+passlib = {extras = ["bcrypt"], version = "*"}
+pymongo = {extras = ["srv"], version = "*"}
+python-dateutil = "*"
+python-jose = {extras = ["cryptography"], version = "*"}
+python-multipart = "*"
+requests = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+xmltodict = "*"
 
 [dev-packages]
+autopep8 = "*"
 pycodestyle = "*"
 pylint = "*"
-autopep8 = "*"
 pytest = "*"
 
 [requires]
 python_version = "3.9"
 
 [scripts]
-app = "uvicorn rss.reader.main:app --reload"
+app = "uvicorn rss.reader.main:main --reload"
+workers = "dramatiq rss.reader.workers.feeds --watch ."
 lint = "pylint rss/"
 pep8 = "autopep8 -ri rss/"
-worker = "dramatiq rss.reader.workers.feeds:worker_update_feeds"
 test = "pytest -rfEp test/"

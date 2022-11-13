@@ -8,12 +8,12 @@ services:
     image: redis
     container_name: redis
     network_mode: host
-  worker:
+  workers:
     build:
       context: .
     entrypoint:
       - dramatiq
-      - rss.reader.workers.feeds:worker_update_feeds
+      - rss.reader.workers.feeds
     image: sendcloud/rss-reader:latest
     container_name: rss_worker
     network_mode: host
@@ -29,4 +29,4 @@ services:
     depends_on:
       - mongo
       - redis
-      - worker
+      - workers
