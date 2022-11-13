@@ -12,14 +12,17 @@ class UserRepository(BaseRepository):
             return_password: bool = False) -> Union[dict[str, Any], None]:
         args = {}
         if not return_password:
-            args |= {'projection': {'password': False}}
-        return self.get(query=query, **args)
+            args |= {'projection': {'password': 0}}
+        return super().get(query=query, **args)
 
-    def get_all(self, query: Union[dict[str, Any], None] = None, limit: int = 20,
-                return_password: bool = False) -> list[dict[str, Any]]:
+    def get_by_id(self, id: str, return_password: bool = False) -> Union[dict[str, Any], None]:
+        return self.get(query={'_id': id}, return_password=return_password)
+
+    def get_all(self, query: Union[dict[str, Any], None] = None,
+                limit: int = 20, return_password: bool = False) -> list[dict[str, Any]]:
         args = {'limit': limit}
         if not query:
             query = {}
         if not return_password:
-            args |= {'projection': {'password': False}}
-        return list(self.get_all(query=query, **args))
+            args |= {'projection': {'password': 0}}
+        return list(super().get_all(query=query, **args))

@@ -1,19 +1,14 @@
 import pytest
-import random
-import string
 
 from fastapi import status
 from fastapi.testclient import TestClient
 
 from rss.reader.main import main
+from utils import random_string
+
 
 app = main()
 cli = TestClient(app)
-
-
-def random_string(length: int = 10):
-    letters = string.ascii_lowercase
-    return ''.join(random.choice(letters) for i in range(length))
 
 
 @pytest.fixture(scope='module')
