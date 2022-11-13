@@ -23,35 +23,39 @@ class BaseRepository:
         res = self.col.insert_many(documents)
         return list(res.inserted_ids)
 
-    def count(self, filter: dict[str, Any] = {}, **kwargs) -> int:
+    def count(self, query: Union[dict[str, Any], None] = None, **kwargs) -> int:
         '''Count documents in collection.'''
-        return self.col.count_documents(filter=filter, **kwargs)
+        if not query:
+            query = {}
+        return self.col.count_documents(filter=query, **kwargs)
 
-    def get(self, filter: dict[str, Any], **kwargs) -> Union[dict[str, Any], None]:
-        args = {'filter': filter} | kwargs
+    def get(self, query: dict[str, Any], **kwargs) -> Union[dict[str, Any], None]:
+        args = {'filter': query} | kwargs
         return self.col.find_one(**args)
 
     def get_by_id(self, id: str) -> Union[dict[str, Any], None]:
-        return self.get(filter={'_id': id})
+        return self.get(query={'_id': id})
 
-    def get_all(self, filter: dict[str, Any] = {}, limit: int = 20,
+    def get_all(self, query: Union[dict[str, Any], None] = None, limit: int = 20,
                 **kwargs) -> list[dict[str, Any]]:
-        args = {'filter': filter, 'limit': limit} | kwargs
+        if not query:
+            query = {}
+        args = {'filter': query, 'limit': limit} | kwargs
         return list(self.col.find(**args))
 
     def update_by_id(self, id: str, document: dict[str, Any]) -> UpdateResult:
-        return self.update(filter={'_id': id}, document=document)
+        return self.update(query={'_id': id}, document=document)
 
-    def update(self, filter: dict[str, Any],
+    def update(self, query: dict[str, Any],
                document: dict[str, Any]) -> UpdateResult:
         if '_id' in document:
             del document['_id']
-        return self.col.update_one(filter=filter, update={'$set': document})
+        return self.col.update_one(filter=query, update={'$set': document})
 
-    def delete(self, filter: dict[str, Any]) -> int:
-        res = self.col.delete_one(filter=filter)
+    def delete(self, query: dict[str, Any]) -> int:
+        res = self.col.delete_one(filter=query)
         return res.deleted_count
 
-    def delete_all(self, filter: dict[str, Any]) -> int:
-        res = self.col.delete_many(filter=filter)
+    def delete_all(self, query: dict[str, Any]) -> int:
+        res = self.col.delete_many(filter=query)
         return res.deleted_count

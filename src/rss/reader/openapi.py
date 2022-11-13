@@ -15,7 +15,8 @@ def custom_openapi(app: FastAPI) -> dict[str, Any]:
         app.openapi_schema = get_openapi(
             title='Sendcloud RSS Reader',
             version='1.0.0',
-            description='RSS reader solution presented as part of the Sendcloud recruitment process.',
+            description='RSS reader solution presented as part of the ' +
+                        'Sendcloud recruitment process.',
             routes=app.routes,
             contact={
                 'name': 'Alexandre Bolzon',

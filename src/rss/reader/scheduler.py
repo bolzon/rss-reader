@@ -6,7 +6,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from rss.reader.workers.feeds import worker_update_feeds
 
 
-FEEDS_UPDATE_INTERVAL = int(os.getenv('FEEDS_UPDATE_INTERVAL', 15))
+FEEDS_UPDATE_INTERVAL = int(os.getenv('FEEDS_UPDATE_INTERVAL', '15'))
 
 logger = logging.getLogger(__name__)
 

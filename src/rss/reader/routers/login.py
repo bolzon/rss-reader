@@ -22,7 +22,7 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(),
           repo: Repository = Depends(db_repo)):
     not_authorized = HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
                                    detail='Invalid email or password.')
-    db_user = repo.user.get(filter={'email': form_data.username},
+    db_user = repo.user.get(query={'email': form_data.username},
                             return_password=True)
     if not db_user:
         raise not_authorized

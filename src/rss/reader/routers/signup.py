@@ -18,7 +18,7 @@ router = APIRouter()
 @router.post('/', status_code=status.HTTP_201_CREATED, response_model=User,
              responses={status.HTTP_400_BAD_REQUEST: {'model': UserAlreadyExists}})
 def signup(user: SignupUser, repo: Repository = Depends(db_repo)):
-    if repo.user.get(filter={'email': user.email}) is not None:
+    if repo.user.get(query={'email': user.email}) is not None:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,
                             detail='User already exists')
     user.password = encrypt_user_pwd(user.password)

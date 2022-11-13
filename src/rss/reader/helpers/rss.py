@@ -1,11 +1,12 @@
 import logging
 
 from collections import OrderedDict
-from dateutil.parser import parse
 from typing import Any, Union
 
 import requests
 import xmltodict
+
+from dateutil.parser import parse
 
 from rss.reader.domain.rss_item import RssItem, RssItemList
 
@@ -24,7 +25,7 @@ def get_json_feed_from_url(url: str) -> Union[OrderedDict[str, Any], None]:
     return xmltodict.parse(res.content)
 
 
-def load_feed(rss_data: dict[str, Any], feed: dict[str, Any]) -> dict[str, Any]:
+def load_feed(rss_data: dict[str, Any]) -> dict[str, Any]:
     '''Loads feed info from RSS and return dict with those info.'''
     json_feed = {}
     channel = rss_data.get('rss', {}).get('channel', {})
