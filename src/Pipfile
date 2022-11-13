@@ -28,7 +28,7 @@ python_version = "3.9"
 
 [scripts]
 app = "uvicorn rss.reader.main:main --reload"
-workers = "dramatiq rss.reader.workers --watch ."
+workers = "dramatiq rss.reader.workers.feeds --watch ."
 lint = "pylint rss/"
 pep8 = "autopep8 -ri rss/"
 test = "pytest -rfEp test/"

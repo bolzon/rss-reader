@@ -9,7 +9,7 @@ from rss.reader.injections.repo import db_repo
 from rss.reader.models.deleted import DeletedResponse
 from rss.reader.models.feed import FollowRssFeed, ForceUpdateRssFeed, UnfollowRssFeed
 from rss.reader.models.not_found import NotFound
-from rss.reader.workers.feeds import worker_update_feeds
+from rss.reader.workers.feeds import worker_update_feed
 
 
 logger = logging.getLogger(__name__)
@@ -31,7 +31,7 @@ def force_update(request: Request, feed: ForceUpdateRssFeed, repo: Repository = 
     if not db_feed:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                             detail=f'Feed with id "{id}" not found')
-    worker_update_feeds.send([feed.id])
+    worker_update_feed.send(feed.id)
     return repo.feed.get_by_id(feed.id)
 
 
@@ -47,7 +47,7 @@ def follow(request: Request, feed: FollowRssFeed, repo: Repository = Depends(db_
                     url=feed.url.lower())
         ))
         logger.debug('Feed created: %s', db_feed)
-        worker_update_feeds.send([db_feed['_id']])
+        worker_update_feed.send(db_feed['_id'])
     return db_feed
 
 

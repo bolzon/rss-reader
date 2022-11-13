@@ -26,7 +26,7 @@ def update_feed(feed_id: str, feed_dict: dict[str, str],
     if not rss_data:
         raise RuntimeError(f'Invalid feed URL: {feed_dict["url"]} ({feed_id})')
 
-    feed_dict |= rss.load_feed(rss_data=rss_data, feed=feed_dict)
+    feed_dict |= rss.load_feed(rss_data=rss_data)
     item_list = rss.load_items(rss_data=rss_data, feed_id=feed_id,
                                user_id=feed_dict['user_id'])
     feed_dict = exclude_none_keys(feed_dict)
