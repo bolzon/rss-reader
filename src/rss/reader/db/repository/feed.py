@@ -23,7 +23,8 @@ class FeedRepository(BaseRepository):
     def get_all_by_user(self, user_id: str, limit: int = 20) -> list[dict[str, Any]]:
         return self.get_all(query={'user_id': user_id}, limit=limit)
 
-    def get_all_simplified_gen(self, limit: int = 20, **kwargs) -> Generator[dict[str, str], None, None]:
+    def get_all_simplified_gen(self, limit: int = 20,
+                               **kwargs) -> Generator[dict[str, str], None, None]:
         '''Return only feed ids and their user ids/urls to improve performance.
 
         This function is a generator, which means "limit" number of items are
@@ -43,5 +44,3 @@ class FeedRepository(BaseRepository):
                 yield {f['_id']: f for f in feeds}
                 skip += len(feeds)
                 count -= len(feeds)
-
-        return None
