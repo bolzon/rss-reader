@@ -51,10 +51,10 @@ $ docker-compose up -d
 ```
 
 Server URL:
-- https://127.0.0.1:8000/
+- http://127.0.0.1:8000/
 
 Docs URL (OpenAPI):
-- https://127.0.0.1:8000/docs
+- http://127.0.0.1:8000/docs
 
 ## Development mode
 
