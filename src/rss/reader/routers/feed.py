@@ -27,7 +27,7 @@ def list_feeds(request: Request, repo: Repository = Depends(db_repo)):
             responses={status.HTTP_404_NOT_FOUND: {'model': NotFound}})
 def force_update(request: Request, feed: ForceUpdateRssFeed, repo: Repository = Depends(db_repo)):
     db_feed = repo.feed.get(query={'_id': feed.id,
-                                    'user_id': request.user.id})
+                                   'user_id': request.user.id})
     if not db_feed:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                             detail=f'Feed with id "{id}" not found')
@@ -39,7 +39,7 @@ def force_update(request: Request, feed: ForceUpdateRssFeed, repo: Repository = 
 def follow(request: Request, feed: FollowRssFeed, repo: Repository = Depends(db_repo)):
     logger.debug('Checking existing feed: %s', feed.url)
     db_feed = repo.feed.get(query={'user_id': request.user.id,
-                                    'url': feed.url.lower()})
+                                   'url': feed.url.lower()})
     if not db_feed:
         logger.debug('No feed found, creating one')
         db_feed = repo.feed.create(jsonable_encoder(
@@ -54,11 +54,13 @@ def follow(request: Request, feed: FollowRssFeed, repo: Repository = Depends(db_
 @router.post('/unfollow', response_model=DeletedResponse,
              responses={status.HTTP_404_NOT_FOUND: {'model': NotFound}})
 def unfollow(request: Request, feed: UnfollowRssFeed, repo: Repository = Depends(db_repo)):
-    db_feed = repo.feed.get_by_id(feed.id)
+    db_feed = repo.feed.get(query={'user_id': request.user.id,
+                                   'url': feed.url.lower()})
     if not db_feed:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                             detail=f'Feed with id "{id}" not found')
+    feed_id = db_feed['_id']
     items_count = repo.item.delete_all(query={'user_id': request.user.id,
-                                               'feed_id': feed.id})
-    feed_count = repo.feed.delete(query={'_id': feed.id})
+                                              'feed_id': feed_id})
+    feed_count = repo.feed.delete(query={'_id': feed_id})
     return DeletedResponse(deleted=items_count + feed_count)

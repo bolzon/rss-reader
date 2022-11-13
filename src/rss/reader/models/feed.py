@@ -6,7 +6,7 @@ class FollowRssFeed(BaseModel):
 
 
 class UnfollowRssFeed(BaseModel):
-    id: str
+    url: HttpUrl
 
 
 class ListRssItems(BaseModel):

@@ -11,7 +11,3 @@ class User(BaseModel):
 
 class UserWithPassword(User):
     password: str
-
-
-class UserList(BaseModel):
-    users: list[User]

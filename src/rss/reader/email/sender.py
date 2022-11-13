@@ -2,6 +2,7 @@ import logging
 
 from typing import Any
 
+
 logger = logging.getLogger(__name__)
 
 
@@ -27,4 +28,5 @@ def notify_user_feed_update_failed(user: dict[str, Any], feed: dict[str, Any]):
 
 
 def send_email(email_from: str, email_to: str, subject: str, body: str):  # pylint: disable=unused-argument
+    # fake email send
     logger.info('Sending email to notify user about feed update failure.')
