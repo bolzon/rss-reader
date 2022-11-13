@@ -102,7 +102,7 @@ Here's the list of things that I'd like to have improved, but couldn't implement
 - **Service layer.** That layer would help to abstract a little bit more the logic present in routers.
 - **Pagination.** An absolute must have for any API, but once it was not in the requirements, I opted to focus on other things.
 - **DB transactions.** I started to implement it, but left the initial code in a separate branch. It certainly must be part of a production-ready system.
-- **Events-driven architecture.** That would lead the system to a next level with a little bit more complex architecture, so I decided to go for a monolith for now, once it's a simple application.
+- **Events-driven architecture.** That would lead the system to a next level with a little bit more complex architecture, so I decided to go for a monolith for now, once it's a simple application and it was advised to _avoid over-engineering_.
 - **More tests.** Tests, such as the application itself, take lots of time to design and implement, but once they are in place, things are way easier to implement as well as the quality of the software is also assured.
 - **Documentation.** I'm still trying different options to generate Python documentation, so I don't have a favorite yet, but it's absolutelly something that adds a lot to any maintainable software.
 
