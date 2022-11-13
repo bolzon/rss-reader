@@ -1,4 +1,4 @@
-# RSS Reader (or scraper)
+# RSS reader (or scraper)
 
 "Simple RSS scraper application which saves RSS feeds to a database and lets a user view and manage feeds they’ve added to the system through an API. Think of Google Feedburner as an example."
 
@@ -15,7 +15,9 @@
 - Apscheduler for the task scheduling
 - Pytest for integration tests
 
-## Env vars
+## Environment
+
+Application loads env vars from a `.env` file in `src/` folder.
 
 | Variable | Description | Example |
 |:---------|:------------|:--------|
@@ -30,8 +32,6 @@ JWT_SECRET can be randomly generated with openssl.
 ```sh
 $ openssl rand -hex 32
 ```
-
-> **Application loads env vars from a `.env` file in `src/` folder.**
 
 ## Install and run
 
@@ -50,6 +50,12 @@ $ docker-compose build
 $ docker-compose up -d
 ```
 
+Server URL:
+- https://127.0.0.1:8000/
+
+Docs URL (OpenAPI):
+- https://127.0.0.1:8000/docs
+
 ## Development mode
 
 Run mongo and redis in background.
@@ -61,16 +67,15 @@ $ docker-compose up -d mongo redis
 Go to `src/` folder, install all deps and run.
 
 ```sh
+# on terminal 1
+
 $ pipenv install --dev
 $ pipenv run workers
+
+# on terminal 2
+
 $ pipenv run app
 ```
-
-Server URL:
-- https://127.0.0.1:8000/
-
-Docs URL (OpenAPI):
-  - https://127.0.0.1:8000/docs
 
 ## Test
 
@@ -93,9 +98,16 @@ $ pipenv run lint
 
 Here's the list of things that I'd like to have improved, but couldn't implement due to the tight time.
 
-- **DB transactions.** I started to implement it, but left the initial code in a separate branch. It certainly must be part of a production-ready system.
-- **Service layer.** That layer would help to abstract a little bit more the logic present in routers.
 - **Cache.** To improve the performance of the API requests.
-- **Pagination.** A must have for a scalable API, but couldn't be implemented due to the tight time.
-- **Events-driven architecture.** That would lead system to a little bit more complex architecture with many other points of concern, so I decided to go for a monolith for now, once it's a simple application.
-- **More tests.** Tests, such as the application itself, take lots of time to design and implement, but once they are in place, things are way easier to implement as well as the quality of the software that can also be assured.
+- **Service layer.** That layer would help to abstract a little bit more the logic present in routers.
+- **Pagination.** An absolute must have for any API, but once it was not in the requirements, I opted to focus on other things.
+- **DB transactions.** I started to implement it, but left the initial code in a separate branch. It certainly must be part of a production-ready system.
+- **Events-driven architecture.** That would lead the system to a next level with a little bit more complex architecture, so I decided to go for a monolith for now, once it's a simple application.
+- **More tests.** Tests, such as the application itself, take lots of time to design and implement, but once they are in place, things are way easier to implement as well as the quality of the software is also assured.
+- **Documentation.** I'm still trying different options to generate Python documentation, so I don't have a favorite yet, but it's absolutelly something that adds a lot to any maintainable software.
+
+## Final considerations
+
+I'm really glad to be participating of your recruitment process, so I've tried to use as much known concepts I could to show you a little bit of my background and the way I'm used to code. That involves how I organize my code in a repo, how I think both, functional and OOP programming are equally useful when it comes to using it right, how generators and list comprehensions are powerful and lastly, how I write readme files.
+
+I truly hope that I could have reached the minumum requirements of the test and we could follow to the next step. If not, I had a great time participating of this process even though and hope to see you soon any time in the future.
