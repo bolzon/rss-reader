@@ -7,6 +7,6 @@ def exclude_none_keys(feed: dict[str, Any]) -> dict[str, Any]:
 
 
 def split_list(the_list: list[Any], items: int = 1000):
-    '''Yields successive n-sized chunks from lst.'''
+    '''Yields successive items-sized chunks from the given list.'''
     for i in range(0, len(the_list), items):
         yield the_list[i:i + items]

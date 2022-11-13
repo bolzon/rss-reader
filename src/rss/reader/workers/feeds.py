@@ -1,4 +1,5 @@
 import logging
+
 from dotenv import load_dotenv
 from logging.config import fileConfig
 
@@ -41,8 +42,6 @@ def worker_update_feed(feed_id: Union[str, None] = None):
 
 @dramatiq.actor
 def worker_update_feeds():
-    logger.info('UPDATING FEEDS')
-    return
     repo = RepositoryFactory.create()
     # this reads limit number of feeds from DB
     # for each interaction using generator
