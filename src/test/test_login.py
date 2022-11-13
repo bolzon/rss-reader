@@ -32,6 +32,15 @@ def test_login_ok(new_user):
     assert response.status_code == status.HTTP_200_OK
 
 
+def test_login_invalid():
+    invalid_user = {
+        'user': 'John',
+        'pwd': 'superstrong123'
+    }
+    response = cli.post('/login', data=invalid_user, allow_redirects=True)
+    assert response.status_code == status.HTTP_422_UNPROCESSABLE_ENTITY
+
+
 def test_login_unauthorized(new_user):
     user = {
         'username': new_user['email'],
