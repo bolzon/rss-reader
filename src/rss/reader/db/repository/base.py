@@ -24,6 +24,7 @@ class BaseRepository:
         return list(res.inserted_ids)
 
     def count(self, filter: dict[str, Any] = {}, **kwargs) -> int:
+        '''Count documents in collection.'''
         return self.col.count_documents(filter=filter, **kwargs)
 
     def get(self, filter: dict[str, Any], **kwargs) -> Union[dict[str, Any], None]:
