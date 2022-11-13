@@ -111,3 +111,9 @@ Here's the list of things that I'd like to have improved, but couldn't implement
 I'm really glad to be participating of your recruitment process, so I've tried to use as much known concepts I could to show you a little bit of my background and the way I'm used to code. That involves how I organize my code in a repo, how I think both, functional and OOP programming are equally useful when it comes to using it right, how generators and list comprehensions are powerful and lastly, how I write readme files.
 
 I truly hope that I could have reached the minumum requirements of the test and we could follow to the next step. If not, I had a great time participating of this process even though and hope to see you soon any time in the future.
+
+## About
+
+- Author: **Alexandre Bolzon**
+- Delivered: **14th November 2022**
+- Social: **[abolzon](https://abolzon.com)** | **[github](https://github.com/bolzon/)** | **[linkedin](https://www.linkedin.com/in/alexandrebolzon/)**
