@@ -30,7 +30,7 @@ dramatiq.set_broker(redis_broker)
 def worker_update_feed(feed_id: Union[str, None] = None):
     if not feed_id:
         return
-    logger.debug('Updating feed %s', feed_id)
+    logger.info('Updating feed %s', feed_id)
     repo = RepositoryFactory.create()
     feeds = repo.feed.get_by_ids([feed_id])
     if not feeds:
@@ -43,6 +43,7 @@ def worker_update_feed(feed_id: Union[str, None] = None):
 
 @dramatiq.actor
 def worker_update_feeds():
+    logger.info('Updating feeds')
     repo = RepositoryFactory.create()
     # this reads limit number of feeds from DB
     # for each interaction using generator
