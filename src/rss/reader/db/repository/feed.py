@@ -27,7 +27,7 @@ class FeedRepository(BaseRepository):
         return self.get_all(filter={'user_id': user_id}, limit=limit)
 
     def get_all_simplified_gen(self, filter: dict[str, Any] = {}, limit: int = 20,
-                               **kwargs) -> Generator[dict[str, str]]:
+                               **kwargs) -> Generator[dict[str, str], None, None]:
         '''Return only feed ids and their user ids/urls to improve performance.
 
         This function is a generator, which means "limit" number of items are
