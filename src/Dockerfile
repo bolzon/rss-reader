@@ -10,4 +10,4 @@ RUN pip install --upgrade pip && \
 COPY rss/ ./rss/
 
 ENTRYPOINT ["uvicorn"]
-CMD ["rss.reader.main:app", "--no-server-header"]
+CMD ["rss.reader.main:main", "--no-server-header"]
