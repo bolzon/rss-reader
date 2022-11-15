@@ -31,7 +31,7 @@ dramatiq.set_broker(redis_broker)
 
 @dramatiq.actor(actor_name='feed_update_failed')
 def feed_update_failed(message: dict[str, Any], result: dict[str, Any]): # pylint: disable=unused-argument
-    if not (feed_id := message.get('args', [None])[1]):
+    if not (feed_id := message.get('args', [None])[0]):
         return
     if not message.get('options', {}).get('retries', 0) >= 3:
         return
